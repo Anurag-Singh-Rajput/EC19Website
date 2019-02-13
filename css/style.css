@@ -6,6 +6,7 @@
 
 :root {
   --blue: #00aeff;
+  --orange: #f5a623;
 }
 
 /*=====  End of variables  ======*/
@@ -70,8 +71,7 @@
 }
 
 .navbar-right > li:hover {
-  border-bottom: 2px dashed var(--blue);
-  color: var(--blue);
+  color: var(--orange);
 }
 
 /*=====  End of navbar  ======*/
