@@ -1,9 +1,9 @@
-const cursor = document.querySelector(".cursor");
+const cursor = document.querySelector(".cursor-wrapper");
 
 document.addEventListener("mousemove", e => {
   cursor.setAttribute(
     "style",
-    "top: " + (e.pageY - 20) + "px; left: " + (e.pageX - 20) + "px;"
+    "transform: translate(" + (e.pageX - 20) + "px," + (e.pageY - 20) + "px);"
   );
 });
 

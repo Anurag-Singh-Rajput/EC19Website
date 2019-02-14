@@ -37,9 +37,9 @@
   src: url("fonts/copyfonts.com_hirakakustd-w8-opentype.otf");
 }
 
-/** {
-  cursor: url('oval.png'), auto;
-}*/
+body, a{
+  cursor: none;
+}
 
 /*=====  End of fonts  ======*/
 
@@ -220,4 +220,13 @@
 /*  .drama {
     transform: translate(-150px, 20px);
   }*/
+}
+
+/* The following code is for performance improvement of the cursor animation - Aakash*/
+
+.cursor-wrapper {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transition: transform 0s ease-out;
 }
