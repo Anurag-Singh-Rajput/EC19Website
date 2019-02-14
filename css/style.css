@@ -37,6 +37,11 @@
   src: url("fonts/copyfonts.com_hirakakustd-w8-opentype.otf");
 }
 
+@font-face {
+  font-family: LucidaGrande; 
+  src: url("fonts/lucidagrande.ttf");
+}
+
 body, a{
   cursor: none;
 }
@@ -178,12 +183,12 @@ body, a{
   font-family: HiraKakuStd-W8!important;
   width: 625px;
   height: 117px;
-  transform: translate(-400px, -50px);
+  transform: translate(-380px, -50px);
 }
 
 .drama {
   font-family: HiraKakuStd-W8!important;
-  transform: translate(-440px, 20px);
+  transform: translate(-420px, 20px);
   font-size: 30px!important;
   color: #9b9b9b;
   display: inline-block;
@@ -191,7 +196,7 @@ body, a{
 
 .literary {
   font-family: HiraKakuStd-W8!important;
-  transform: translate(-380px, 20px);
+  transform: translate(-360px, 20px);
   font-size: 30px!important;
   color: #9b9b9b;
   display: inline-block;
@@ -199,7 +204,7 @@ body, a{
 
 .coding {
   font-family: HiraKakuStd-W8!important;
-  transform: translate(-320px, 20px);
+  transform: translate(-300px, 20px);
   font-size: 30px!important;
   color: #f5a623;
   display: inline-block;
@@ -207,7 +212,7 @@ body, a{
 
 .dance {
   font-family: HiraKakuStd-W8!important;
-  transform: translate(-250px, 20px);
+  transform: translate(-230px, 20px);
   font-size: 30px!important;
   color: #9b9b9b;
   display: inline-block;
@@ -229,4 +234,105 @@ body, a{
   top: 0px;
   left: 0px;
   transition: transform 0s ease-out;
+}
+
+/* cursor ends */
+
+/* starnight page */
+
+.page-3 {
+  height: 100%!important;
+  width: 100%!important;
+  top: 0px!important;
+  bottom: 0px!important;
+}
+
+.starnight {
+  font-size: 140px!important;
+  font-family: HiraKakuStd-W8!important;
+  margin-top: 15%!important;
+  transform: translate(-300px, 0px);
+}
+
+.day-1 {
+  font-family: HiraKakuStd-W8!important;
+  transform: translate(-520px, 0px);
+  font-size: 30px!important;
+  color: #9b9b9b;
+  display: inline-block;
+}
+
+.day-2 {
+  font-family: HiraKakuStd-W8!important;
+  transform: translate(-440px, 0px);
+  font-size: 30px!important;
+  color: #9b9b9b;
+  display: inline-block;
+}
+
+.day-3 {
+  font-family: HiraKakuStd-W8!important;
+  transform: translate(-360px, 0px);
+  font-size: 30px!important;
+  color: #f5a623;
+  display: inline-block;
+}
+
+/*starnight page ends*/
+
+/*Drama page starts*/
+
+.page-2_1 {
+  height: 100%!important;
+  width: 100%!important;
+  top: 0px!important;
+  bottom: 0px!important;
+  margin-top: 20%!important;
+}
+
+.drama-main {
+  font-size: 140px!important;
+  font-family: HiraKakuStd-W8!important;
+  transform: translate(-390px, 0px);
+}
+
+.nukkad {
+  color: #f5a623;
+  font-size: 20px!important;
+  transform: translate(-160px, 0px);
+  text-align: left;
+  font-weight: bold!important;
+  font-family: LucidaGrande!important;
+}
+
+.nukkad-title {
+  font-family: HiraKakuStd-W8!important;
+  transform: translate(-300px, 20px);
+  font-size: 30px!important;
+  color: #9b9b9b;
+  display: inline-block;
+}
+
+.openmic {
+  font-family: HiraKakuStd-W8!important;
+  transform: translate(-250px, 20px);
+  font-size: 30px!important;
+  color: #9b9b9b;
+  display: inline-block;
+}
+
+.stageplay {
+  font-family: HiraKakuStd-W8!important;
+  transform: translate(-220px, 20px);
+  font-size: 30px!important;
+  color: #f5a623;
+  display: inline-block;
+}
+
+.share-o-lekh {
+  font-family: HiraKakuStd-W8!important;
+  transform: translate(-180px, 20px);
+  font-size: 30px!important;
+  color: #9b9b9b;
+  display: inline-block;
 }
