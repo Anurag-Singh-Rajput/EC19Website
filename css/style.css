@@ -169,3 +169,55 @@
     display: block;
   }
 }
+
+/*start of events page*/
+
+.events {
+  font-size: 150px!important;
+  display: inline-block;
+  font-family: HiraKakuStd-W8!important;
+  width: 625px;
+  height: 117px;
+  transform: translate(-400px, -50px);
+}
+
+.drama {
+  font-family: HiraKakuStd-W8!important;
+  transform: translate(-440px, 20px);
+  font-size: 30px!important;
+  color: #9b9b9b;
+  display: inline-block;
+}
+
+.literary {
+  font-family: HiraKakuStd-W8!important;
+  transform: translate(-380px, 20px);
+  font-size: 30px!important;
+  color: #9b9b9b;
+  display: inline-block;
+}
+
+.coding {
+  font-family: HiraKakuStd-W8!important;
+  transform: translate(-320px, 20px);
+  font-size: 30px!important;
+  color: #f5a623;
+  display: inline-block;
+}
+
+.dance {
+  font-family: HiraKakuStd-W8!important;
+  transform: translate(-250px, 20px);
+  font-size: 30px!important;
+  color: #9b9b9b;
+  display: inline-block;
+}
+
+@media only screen and (max-width: 600px){
+  .events {
+    transform: translate(-150px, -50px);
+  }
+/*  .drama {
+    transform: translate(-150px, 20px);
+  }*/
+}
