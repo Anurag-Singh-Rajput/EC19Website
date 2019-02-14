@@ -6,7 +6,6 @@
 
 :root {
   --blue: #00aeff;
-  --orange: #f5a623;
 }
 
 /*=====  End of variables  ======*/
@@ -31,6 +30,15 @@
   font-family: "geomanistlight";
   src: url("fonts/Geomanist-Light.otf");
 }
+
+@font-face {
+  font-family: "HiraKakuStd-W8";
+  src: url("fonts/copyfonts.com_hirakakustd-w8-opentype.otf");
+}
+
+/** {
+  cursor: url('oval.png'), auto;
+}*/
 
 /*=====  End of fonts  ======*/
 
@@ -68,10 +76,96 @@
 .nav a {
   font-family: "geomanistmedium";
   font-weight: normal;
+  transition: .5s;
 }
 
 .navbar-right > li:hover {
-  color: var(--orange);
+  border-bottom: 2px dashed var(--blue);
+  color: var(--blue);
 }
 
 /*=====  End of navbar  ======*/
+
+/*EC-19*/
+
+.elements {
+  font-size: 110px!important;
+  display: inline-block;
+  font-family: HiraKakuStd-W8!important;
+  width: 625px;
+  height: 117px;
+  transform: translate(-220px, -50px);
+}
+
+._19 {
+  font-size: 148px!important;
+  display: inline-block;
+  font-family: HiraKakuStd-W8!important;
+  width: 229px;
+  height: 148px;
+  transform: translate(-260px, -50px);
+}
+
+.culmyca {
+  font-size: 150px!important;
+  width: 726px;
+  height: 110px;
+  font-family: HiraKakuStd-W8!important;
+  transform: translate(-160px, -90px);
+}
+
+.gallery {
+  font-family: HiraKakuStd-W8!important;
+  transform: translate(-380px, 20px);
+  font-size: 30px!important;
+  color: #9b9b9b;
+  display: inline-block;
+}
+
+.register {
+  font-family: HiraKakuStd-W8!important;
+  transform: translate(-340px, 20px);
+  font-size: 30px!important;
+  color: #9b9b9b;
+  display: inline-block;
+}
+
+.categories {
+  font-family: HiraKakuStd-W8!important;
+  transform: translate(-300px, 20px);
+  font-size: 30px!important;
+  color: #f5a623;
+  display: inline-block;
+}
+
+/*.even {
+  float: right;
+  display: inline-block;
+  color: #9b9b9b;
+  font-size: 106px!important;
+  transform: translate(350px, -150px);
+}*/
+
+@media only screen and (max-width: 600px){
+  .elements {
+    transform: translate(0px, 20px);
+  }
+  ._19 {
+    transform: translate(0px, 50px);
+  }
+  .culmyca {
+    transform: translate(60px, -10px);
+  }
+  .gallery {
+    transform: translate(-330px, 50px);
+    display: block;
+  }
+  .register {
+    transform: translate(-320px, 70px);
+    display: block;
+  }
+  .categories {
+    transform: translate(-295px, 90px);
+    display: block;
+  }
+}
