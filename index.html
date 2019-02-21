@@ -1,181 +1,348 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>
 
-    <title>Elements Culmyca '19</title>
+		<title>Elements Culmyca '19</title>
 
-    <link rel="stylesheet" href="./css/reveal.css" />
-    <link rel="stylesheet" href="./css/theme/black.css" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/cursor.css" />
-  </head>
+		<link rel="stylesheet" href="./css/reveal.css" />
+		<link rel="stylesheet" href="./css/theme/black.css" />
+		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="stylesheet" href="./css/cursor.css" />
+	</head>
 
-  <body>
-    <!-- The nav bar -->
-    <!--right navigation bar-->
-    <ul class="nav navbar-nav navbar-right">
-      <li><a>about</a></li>
-      <li><a>contact</a></li>
-      <li><a>sponsors</a></li>
-      <li><a>team</a></li>
-    </ul>
-    <!-- right navigation bar ends -->
-    <!-- The nav bar ends -->
+	<body>
+		<!-- The nav bar -->
+		<!--right navigation bar-->
+		<ul class="nav navbar-nav navbar-right">
+			<li onclick="Reveal.slide(0,0)"><a>home</a></li>
+			<li onclick="Reveal.slide(3,0)"><a>about</a></li>
+			<li onclick="Reveal.slide(5,0)"><a>contact</a></li>
+			<li onclick="Reveal.slide(6,0)"><a>sponsors</a></li>
+			<li onclick="Reveal.slide(7,0)"><a>team</a></li>
+		</ul>
+		<!-- right navigation bar ends -->
+		<!-- The nav bar ends -->
 
-    <div class="reveal">
-      <div class="slides">
-        <!-- landing page -->
-        <section>
-          <section>
-            <!-- todo: to be done by xavier foster -->
-            <div class="elements">
-              elements
-            </div>
-            <div class="_19">
-              19
-            </div>
-            <div class="culmyca">
-              culmyca
-            </div>
-            <br />
-            <div class="gallery">
-              gallery
-            </div>
-            <div class="register">
-              register
-            </div>
-            <div class="categories">
-              categories
-            </div>
-          </section>
+		<div class="reveal">
+			<div class="slides">
+				<!-- landing page -->
+				<section>
+					<section>
+						<div class="elements-culmyca">
+							<span class="elements">elements</span>
+							<span class="_19">19</span>
+							<span class="culmyca">culmyca</span>
+						</div>
+						<br />
+						<div class="links-to-subsections">
+							<span
+								class="gallery nav-link"
+								onclick="Reveal.slide(0,1);"
+								>gallery</span
+							>
+							<span
+								class="register nav-link"
+								onclick="Reveal.slide(0,2);"
+								>register</span
+							>
+							<span
+								class="categories nav-link"
+								onclick="Reveal.slide(0,3);"
+								>categories</span
+							>
+						</div>
 
-          <!-- gallery section -->
-          <section>
-            gallery
-          </section>
+						<!-- navigate to events -->
+						<div class="to-right big-navigation-link">
+							events
+						</div>
+					</section>
 
-          <!-- register sectin -->
-          <section>
-            register
-          </section>
+					<!-- gallery section -->
+					<section>
+						gallery
+					</section>
 
-          <!-- categories section -->
-          <section>
-            categories
-          </section>
-        </section>
+					<!-- register sectin -->
+					<section>
+						register
+					</section>
 
-        <!-- events slide -->
-        <section>
-          <section>
-            <!-- todo: to be done by xavier foster -->
-            <div class="events">
-              Events
-            </div><br><br>
-            <div class="drama">
-              drama
-            </div>
-            <div class="literary">
-              literary
-            </div>
-            <div class="coding">
-              coding
-            </div>
-            <div class="dance">
-              dance
-            </div>
-          </section>
+					<!-- categories section -->
+					<section>
+						categories
+					</section>
+				</section>
 
-          <!-- drama events section -->
-          <section class="page-2_1">
-            <div class="drama-main">
-              drama
-            </div>
-            <p class="nukkad">
-              Nukkad Natak is a form of theatrical performance and presentation in outdoor<br> public space at the top of their voice with enthusiastic and energetic music.<br> Feel closer to your roots by submerging in the art from the past, which was lost<br> somewhere in urbanization.
-            </p>
-            <div class="nukkad-title">
-              nukkad
-            </div>
-            <div class="openmic">
-              openmic
-            </div>
-            <div class="stageplay">
-              stageplay
-            </div>
-            <div class="share-o-lekh">
-              share-o-lekh
-            </div>
-          </section>
+				<!-- events slide -->
+				<section>
+					<section>
+						<div class="events">
+							<span class="events">events</span>
+						</div>
+						<br />
+						<div class="links-to-subsections">
+							<span
+								class="drama nav-link"
+								onclick="Reveal.slide(1,1);"
+								>drama</span
+							>
+							<span
+								class="literary nav-link"
+								onclick="Reveal.slide(1,2);"
+								>literary</span
+							>
+							<span
+								class="coding nav-link"
+								onclick="Reveal.slide(1,3);"
+								>coding</span
+							>
+							<span
+								class="dance nav-link"
+								onclick="Reveal.slide(1,4);"
+								>dance</span
+							>
+						</div>
 
-          <!-- literary events section -->
-          <section>
-            lierary events
-          </section>
+						<!-- navigate to starnight slide -->
+						<div class="to-right big-navigation-link">
+							Starnight
+						</div>
+					</section>
 
-          <!-- comedy events section -->
-          <section>
-            comedy events
-          </section>
+					<!-- drama events section -->
+					<section class="page-2_1">
+						<div class="drama-main">
+							drama
+						</div>
+						<p class="drama-p">
+							Nukkad Natak is a form of theatrical performance and
+							presentation in outdoor<br />
+							public space at the top of their voice with
+							enthusiastic and energetic music.<br />
+							Feel closer to your roots by submerging in the art
+							from the past, which was lost<br />
+							somewhere in urbanization.
+						</p>
 
-          <!-- dance events section -->
-          <section>
-            dance events
-          </section>
-        </section>
+						<div class="links-to-subsections">
+							<span class="nukkad nav-link">nukkad</span>
+							<span class="openmic nav-link">openmic</span>
+							<span class="stageplay nav-link">stageplay</span>
+							<span class="share-o-lekh nav-link"
+								>share-o-lekh</span
+							>
+						</div>
 
-        <!-- starnight slide -->
-        <section>
-          <section class="page-3">
-            <!-- todo: to be done by xavier foster -->
-            <div class="starnight">
-              starnight
-            </div><br><br>
-            <div class="day-1">
-              day1
-            </div>
-            <div class="day-2">
-              day2
-            </div>
-            <div class="day-3">
-              day3
-            </div>
-          </section>
+						<!-- navigate to literary events slide -->
+						<div class="to-below big-navigation-link">
+							literary
+						</div>
+					</section>
 
-          <!-- starnight day 1 section -->
-          <section>
-            starnight day 1
-          </section>
+					<!-- literary events section -->
+					<section>
+						lierary events
 
-          <!-- starnight day 2 section -->
-          <section>
-            starnight day 2
-          </section>
+						<!-- navigate to coding events slide -->
+						<div class="to-below big-navigation-link">
+							coding
+						</div>
+					</section>
 
-          <!-- starnight day 3 section -->
-          <section>
-            starnight day 3
-          </section>
-        </section>
-      </div>
-    </div>
+					<!-- coding events section -->
+					<section>
+						coding events
 
-    <!-- custom cursor -->
-    <div class="cursor-wrapper">
-      <div class="cursor"></div>
-    </div>
+						<!-- navigate to dance events slide -->
+						<div class="to-below big-navigation-link">
+							dance
+						</div>
+					</section>
 
-    <!-- reveal js -->
-    <!-- <script src="./lib/js/head.min.js"></script> -->
-    <script src="./js/reveal.js"></script>
-    <script src="./js/revealConfig.js"></script>
+					<!-- dance events section -->
+					<section>
+						dance events
 
-    <!-- custom cursor -->
-    <script src="./js/cursor.js"></script>
-  </body>
+						<!-- navigate to dance events slide -->
+						<div
+							class="big-navigation-link"
+							onclick="Reveal.slide(2,0);"
+						>
+							starnight
+						</div>
+					</section>
+				</section>
+
+				<!-- starnight slide -->
+				<section>
+					<section class="page-3">
+						<div class="starnight">
+							starnight
+						</div>
+						<br />
+						<div class="links-to-subsections">
+							<span
+								class="day-1 nav-link"
+								onclick="Reveal.slide(2,1);"
+								>day_1</span
+							>
+							<span
+								class="day-2 nav-link"
+								onclick="Reveal.slide(2,2);"
+								>day_2</span
+							>
+							<span
+								class="day-3 nav-link"
+								onclick="Reveal.slide(2,3);"
+								>day_3</span
+							>
+						</div>
+
+						<div
+							class="big-navigation-link"
+							onclick="Reveal.slide(0,0);"
+						>
+							home
+						</div>
+					</section>
+
+					<!-- starnight day 1 section -->
+					<section>
+						starnight day 1
+					</section>
+
+					<!-- starnight day 2 section -->
+					<section>
+						starnight day 2
+					</section>
+
+					<!-- starnight day 3 section -->
+					<section>
+						starnight day 3
+					</section>
+				</section>
+
+				<!-- slides for navbar links -->
+				<!-- about ymca -->
+				<section class="about-section">
+					<div class="about-section-content">
+						<h1 class="about-heading-1">About</h1>
+						<h1 class="about-heading-2">YMCA</h1>
+						<p class="about-p">
+							The YMCA University of Science & Technology,
+							Faridabad erstwhile YMCA Institute Of Engineering,
+							was established as a joint venture of the National
+							Council of YMCAs of India, Govt of Haryana, and the
+							Central Agencies for Development Aid, Bonn, Germany.
+							It started as an Indo-German project with an aim to
+							impart technical education to a developing India on
+							German pattern. In December 2009 it was awarded the
+							status of state university by the state government,
+							thus making it an autonomous institution. YMCAUST
+							has been conferred “Best Upcoming University” award
+							by Associated Chamber of Commerce and Industry of
+							India in Feb'14 under National Education Excellence
+							Awards 2014.
+							<br />
+							<br />
+							YMCAUST has been awarded 'AAA+' by the Career360
+							Magazine in the year 2013, 2014 and 2015. YMCA
+							University has also been accredited with 'A' grade
+							by NAAC. Our University has been mandated to
+							affiliate 50+ B.Tech and B.Ed institutions.
+						</p>
+						<div class="to-right big-navigation-link">
+							Culmyca
+						</div>
+					</div>
+				</section>
+
+				<!-- about culmyca -->
+				<section class="about-section">
+					<div class="about-section-content">
+						<h1 class="about-heading-1">About</h1>
+						<h1
+							class="about-heading-2"
+							style="text-transform: none;"
+						>
+							Culmyca
+						</h1>
+						<p class="about-p">
+							The YMCA University of Science & Technology,
+							Faridabad erstwhile YMCA Institute Of Engineering,
+							was established as a joint venture of the National
+							Council of YMCAs of India, Govt of Haryana, and the
+							Central Agencies for Development Aid, Bonn, Germany.
+							It started as an Indo-German project with an aim to
+							impart technical education to a developing India on
+							German pattern. In December 2009 it was awarded the
+							status of state university by the state government,
+							thus making it an autonomous institution. YMCAUST
+							has been conferred “Best Upcoming University” award
+							by Associated Chamber of Commerce and Industry of
+							India in Feb'14 under National Education Excellence
+							Awards 2014.
+							<br />
+							<br />
+							YMCAUST has been awarded 'AAA+' by the Career360
+							Magazine in the year 2013, 2014 and 2015. YMCA
+							University has also been accredited with 'A' grade
+							by NAAC. Our University has been mandated to
+							affiliate 50+ B.Tech and B.Ed institutions.
+						</p>
+						<div class="to-right big-navigation-link">
+							Contact
+						</div>
+					</div>
+				</section>
+
+				<!-- contact -->
+				<section>
+					Contact
+					<div class="to-right big-navigation-link">
+						Sponsors
+					</div>
+				</section>
+
+				<!-- sponsors -->
+				<section>
+					Sponsors
+					<div class="to-right big-navigation-link">
+						Team
+					</div>
+				</section>
+
+				<!-- team -->
+				<section>
+					Team
+					<div class="to-right big-navigation-link">
+						Home
+					</div>
+				</section>
+			</div>
+			<!-- slides -->
+		</div>
+		<!-- reveal-->
+
+		<!-- custom cursor -->
+		<div class="cursor-wrapper">
+			<div class="cursor"></div>
+		</div>
+
+		<!-- reveal js -->
+		<!-- <script src="./lib/js/head.min.js"></script> -->
+		<script src="./js/reveal.js"></script>
+		<script src="./js/revealConfig.js"></script>
+
+		<!-- custom cursor -->
+		<script src="./js/cursor.js"></script>
+		<!-- javascript -->
+		<script src="./js/script.js"></script>
+	</body>
 </html>
