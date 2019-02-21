@@ -51,6 +51,11 @@ section {
 	margin-left: calc(-5vw) !important;
 }
 
+/* for smooth animation between slides */
+[hidden] {
+	display: inherit !important;
+}
+
 /*=====  End of global  ======*/
 
 /*=============================================
