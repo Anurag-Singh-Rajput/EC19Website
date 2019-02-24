@@ -130,3 +130,9 @@ a {
 	border: 1px solid var(--orange);
 }
 /*# sourceMappingURL=cursor.css.map */
+
+@media screen and (max-width: 600px) {
+	.cursor {
+		display: none;
+	}
+}

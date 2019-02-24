@@ -104,6 +104,21 @@ section {
 	color: var(--orange);
 }
 
+.navbar-left {
+	float: left !important;
+	position: fixed;
+	z-index: 10;
+	padding: 0;
+	font-weight: bold;
+	font-size: 24px;
+	letter-spacing: 2px;
+	margin: 26px 48px;
+	cursor: pointer;
+}
+.navbar-left:hover {
+	color: var(--orange);
+}
+
 @media screen and (max-width: 900px) {
 	.nav {
 		/* background-color: black; */
@@ -119,12 +134,12 @@ section {
 		display: inline-block;
 		width: 25px;
 		height: 25px;
-		padding: 12px;
+		padding: 16px;
 		margin-right: 44px;
 		margin-top: 26px;
 	}
 	.nav > #nav-btn > label:hover {
-		background-color: rgba(0, 0, 0, 0.3);
+		background-color: rgba(0, 0, 0, 0.1);
 		cursor: pointer;
 	}
 	.nav > #nav-btn > label > span {
@@ -159,6 +174,11 @@ section {
 		overflow: hidden;
 		transition: height 0.5s;
 		transition-delay: 0;
+	}
+	.navbar-left {
+		margin-top: 28px;
+		margin-left: 24px !important;
+		font-size: 20px;
 	}
 }
 
@@ -262,7 +282,7 @@ section {
 	font-size: 30px !important;
 	color: #9b9b9b;
 	display: inline-block;
-	padding-right: 24px !important;
+	padding-right: 32px !important;
 	transition: all 0.3s;
 }
 
@@ -279,6 +299,10 @@ section {
 }*/
 
 @media only screen and (max-width: 600px) {
+	.nav-link {
+		font-size: 42px !important;
+	}
+
 	/* .elements {
 		transform: translate(0px, 20px);
 	}

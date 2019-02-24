@@ -24,7 +24,7 @@ Reveal.initialize({
   slideNumber: false,
 
   // Push each slide change to the browser history
-  history: false,
+  history: true,
 
   // Enable keyboard shortcuts for navigation
   keyboard: true,
