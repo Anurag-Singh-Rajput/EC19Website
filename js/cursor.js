@@ -1,9 +1,10 @@
-const cursor = document.querySelector(".cursor-wrapper");
+var cursor_wrapper = document.querySelector(".cursor-wrapper");
+var cursor = document.querySelector('.cursor');
 
 document.addEventListener("mousemove", e => {
-  cursor.setAttribute(
+  cursor_wrapper.setAttribute(
     "style",
-    "transform: translate(" + (e.pageX - 20) + "px," + (e.pageY - 20) + "px);"
+    "transform: translate(" + (e.pageX - 22) + "px," + (e.pageY - 15) + "px);"
   );
 });
 

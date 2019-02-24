@@ -6,6 +6,7 @@
 			name="viewport"
 			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
 		/>
+		<meta name="theme-color" content="#222" />
 
 		<title>Elements Culmyca '19</title>
 
@@ -17,15 +18,29 @@
 
 	<body>
 		<!-- The nav bar -->
-		<!--right navigation bar-->
-		<ul class="nav navbar-nav navbar-right">
-			<li onclick="Reveal.slide(0,0)"><a>home</a></li>
-			<li onclick="Reveal.slide(3,0)"><a>about</a></li>
-			<li onclick="Reveal.slide(5,0)"><a>contact</a></li>
-			<li onclick="Reveal.slide(6,0)"><a>sponsors</a></li>
-			<li onclick="Reveal.slide(7,0)"><a>team</a></li>
-		</ul>
-		<!-- right navigation bar ends -->
+		<div class="nav">
+			<!--right navigation bar-->
+			<input type="checkbox" id="nav-check" />
+			<ul
+				class="nav navbar-nav navbar-right navbar-links"
+				id="navbar-links"
+			>
+				<div id="nav-btn">
+					<!-- nav-button -->
+					<label for="nav-check">
+						<span class="nav-button-bar-1"></span>
+						<span class="nav-button-bar-2"></span>
+						<span class="nav-button-bar-1"></span>
+					</label>
+				</div>
+				<li onclick="gotoslide(0,0);"><a>home</a></li>
+				<li onclick="gotoslide(3,0)"><a>about</a></li>
+				<li onclick="gotoslide(5,0)"><a>contact</a></li>
+				<li onclick="gotoslide(6,0)"><a>sponsors</a></li>
+				<li onclick="gotoslide(7,0)"><a>team</a></li>
+			</ul>
+			<!-- right navigation bar ends -->
+		</div>
 		<!-- The nav bar ends -->
 
 		<div class="reveal">
@@ -321,7 +336,7 @@
 				<!-- team -->
 				<section>
 					Team
-					<div class="big-navigation-link" onclick="Reveal.slide(0,0)">
+					<div class="big-navigation-link" onclick="gotoslide(0,0)">
 						Home
 					</div>
 				</section>

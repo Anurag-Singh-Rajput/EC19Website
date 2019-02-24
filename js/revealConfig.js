@@ -4,7 +4,7 @@
 
 Reveal.initialize({
   // Display presentation control arrows
-  controls: true,
+  controls: false,
 
   // Help the user learn the controls by providing hints, for example by
   // bouncing the down arrow when they first encounter a vertical slide
@@ -18,7 +18,7 @@ Reveal.initialize({
   controlsBackArrows: "faded",
 
   // Display a presentation progress bar
-  progress: true,
+  progress: false,
 
   // Display the page number of the current slide
   slideNumber: false,
@@ -36,7 +36,7 @@ Reveal.initialize({
   center: true,
 
   // Enables touch navigation on devices with touch input
-  touch: true,
+  touch: false,
 
   // Loop the presentation
   loop: false,
