@@ -323,12 +323,28 @@ section {
 
 .links-to-subsections {
 	text-align: left !important;
+	white-space: nowrap;
+	width: 650px !important;
+	height: 60px !important;
+	overflow-x: scroll !important;
+	overflow-y: scroll !important;
+}
+.links-to-subsections::before {
+	content: "";
+	height: 30px;
+	width: 30px;
+	background: url(../images/icons/right-arrow.svg) no-repeat;
+	position: absolute;
+	margin-left: 670px;
+	background-size: cover;
+	margin-top: 16px;
 }
 .nav-link {
 	font-family: HiraKakuStd-W8 !important;
 	font-size: 30px !important;
 	color: #9b9b9b;
-	display: inline-block;
+	display: inline;
+	padding-top: 24px !important;
 	padding-right: 32px !important;
 	transition: all 0.3s;
 }
@@ -350,29 +366,6 @@ section {
 	.nav-link {
 		font-size: 42px !important;
 	}
-
-	/* .elements {
-		transform: translate(0px, 20px);
-	}
-	._19 {
-		transform: translate(0px, 50px);
-	}
-	.culmyca {
-		transform: translate(60px, -10px);
-		line-height: 150px !important;
-	} */
-	/* .gallery {
-		transform: translate(-330px, 50px);
-		display: block;
-	}
-	.register {
-		transform: translate(-320px, 70px);
-		display: block;
-	}
-	.categories {
-		transform: translate(-295px, 90px);
-		display: block;
-	} */
 }
 
 /*=====  End of EC-19 - Homepage  ======*/
@@ -432,6 +425,16 @@ section {
 }
 
 /*=====  End of starnight page  ======*/
+
+/*=============================================
+=            scrollbar            =
+=============================================*/
+
+[data-simplebar] {
+	overflow: x;
+}
+
+/*=====  End of scrollbar  ======*/
 
 /*=============================================
 =            Media quesies            =
