@@ -18,13 +18,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		var navbar = document.getElementById("navbar-links");
 		if (navbar.style.height == "0px") {
 			navbar.style.height = "2000px";
+			navbar.style.backgroundColor = "#222";
 		} else {
 			navbar.style.height = "0";
+			navbar.style.backgroundColor = "transparent";
 		}
 	});
 });
 
 function gotoslide(x, y) {
 	Reveal.slide(x, y);
-	document.getElementById("navbar-links").style.height = "0";
+	var navbar = document.getElementById("navbar-links");
+	navbar.style.height = "0";
+	navbar.style.backgroundColor = "transparent";
 }
