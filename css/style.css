@@ -278,6 +278,18 @@ section {
 	text-align: left !important;
 }
 
+@media screen and (max-width: 1200px) {
+	.about-section-content {
+		width: 70%;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.about-section-content {
+		width: 90%;
+	}
+}
+
 /*=====  End of about section  ======*/
 
 /*=============================================
@@ -430,13 +442,20 @@ section {
 @media screen and (max-width: 1200px) {
 	/*----------  about  ----------*/
 	section {
-		margin-left: 5vw !important;
+		margin-left: 0 !important;
+	}
+	.big-navigation-link {
+		top: calc(25vh) !important;
+		right: calc(-20vw) !important;
 	}
 }
 
 /*----------  600px  ----------*/
 
 @media screen and (max-width: 600px) {
+	section {
+		margin-left: 5vw !important;
+	}
 	/*----------  about  ----------*/
 	.about-section {
 		width: 100% !important;
