@@ -114,15 +114,15 @@ section {
 	letter-spacing: 2px;
 	margin: 26px 48px;
 	cursor: pointer;
+	transition: all 0.3s;
 }
 .navbar-left:hover {
 	color: var(--orange);
+	transform: scale(1.2);
+	-webkit-transform: scale(1.2);
 }
 
 @media screen and (max-width: 900px) {
-	.nav {
-		/* background-color: black; */
-	}
 	.nav > #nav-btn {
 		display: inline-block;
 		position: absolute;
@@ -203,9 +203,45 @@ section {
 .big-navigation-link:hover {
 	color: #ddd !important;
 	transition: all 0.3s;
+	cursor: pointer;
 }
 
 /*=====  End of big-navigation-link navigation link div  ======*/
+
+/*=============================================
+=            Coming soon slide            =
+=============================================*/
+
+.go-to-site,
+.coming-soon {
+	font-family: HiraKakuStdN-W8;
+	text-transform: lowercase !important;
+}
+
+.go-to-site {
+	cursor: pointer;
+	display: inline;
+	padding: 8px 48px !important;
+	border: 2px solid white !important;
+	transition: all 0.2s;
+	font-size: 24px !important;
+}
+.go-to-site:hover {
+	color: var(--orange);
+	border-color: var(--orange) !important;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+@media screen and (max-width: 600px) {
+	.go-to-site {
+		font-size: 52px !important;
+	}
+	.coming-soon {
+		font-size: 90px !important;
+	}
+}
+
+/*=====  End of Coming soon slide  ======*/
 
 /*=============================================
 =            about section            =
@@ -288,6 +324,7 @@ section {
 
 .nav-link:hover {
 	color: var(--orange);
+	cursor: pointer;
 }
 
 /*.even {
