@@ -328,6 +328,7 @@ section {
 	height: 60px !important;
 	overflow-x: scroll !important;
 	overflow-y: scroll !important;
+	overflow: hidden!important;	
 }
 .links-to-subsections::before {
 	content: "";
