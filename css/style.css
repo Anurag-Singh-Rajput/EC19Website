@@ -64,8 +64,8 @@ section {
 	white-space: nowrap;
 	width: 650px !important;
 	height: 64px !important;
-	overflow-x: scroll !important;
-	overflow-y: scroll !important;
+	overflow-x: hidden !important;
+	overflow-y: hidden !important;
 }
 .links-to-subsections::before {
 	content: "";
