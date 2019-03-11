@@ -24,6 +24,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			navbar.style.backgroundColor = "transparent";
 		}
 	});
+
+	new Siema();
 });
 
 function gotoslide(x, y) {
