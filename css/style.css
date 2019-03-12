@@ -64,9 +64,10 @@ section {
 	white-space: nowrap;
 	width: 650px !important;
 	height: 64px !important;
-	/*overflow: hidden;*/
+	overflow-x: auto;
+	overflow-y: hidden;
 }
-.links-to-subsections::before {
+/* .links-to-subsections::before {
 	content: "";
 	height: 30px;
 	width: 30px;
@@ -75,7 +76,7 @@ section {
 	margin-left: 680px;
 	background-size: cover;
 	margin-top: 18px;
-}
+} */
 .nav-link {
 	font-family: HiraKakuStd-W8 !important;
 	font-size: 30px !important;
@@ -93,7 +94,7 @@ section {
 /*Team page*/
 
 .team {
-	font-size: 64px!important;
+	font-size: 64px !important;
 	letter-spacing: 5px;
 }
 
@@ -102,9 +103,9 @@ section {
 	width: 160px;
 	border-radius: 50%;
 	display: inline-block;
-	
-	border: 4px solid rgb(231, 141, 33)!important;
-	margin-left: 4%!important;
+
+	border: 4px solid rgb(231, 141, 33) !important;
+	margin-left: 4% !important;
 }
 
 .sub-caption {
@@ -490,7 +491,9 @@ section {
 =            Event Subsection            =
 =============================================*/
 
-.event-p {
+.category-details-p,
+#event-description,
+#event-rules-p {
 	color: #f5a623;
 	font-size: 20px !important;
 	text-align: left;
@@ -500,7 +503,7 @@ section {
 }
 
 @media screen and (max-width: 600px) {
-	.event-p {
+	.category-details-p {
 		font-size: 32px !important;
 		padding-right: 100px !important;
 	}
@@ -517,13 +520,33 @@ section {
 	width: 100% !important;
 }
 
-.drama-main {
+.event-main-heading {
 	font-size: 140px !important;
 	font-family: HiraKakuStd-W8 !important;
 	text-align: left !important;
 }
 
 /*=====  End of Drama page  ======*/
+
+/*=============================================
+=            Event Details section            =
+=============================================*/
+
+#event-details-section {
+	width: 100%;
+	height: 5000px;
+}
+#event-description-heading,
+#event-rules-heading {
+	text-align: left !important;
+	font-size: 22px;
+	text-transform: capitalize;
+	font-family: HiraKakuStd-W8 !important;
+	margin-top: 12px;
+	margin-bottom: -12px;
+}
+
+/*=====  End of Event Details section  ======*/
 
 /*=============================================
 =            starnight page            =
@@ -539,7 +562,12 @@ section {
 	/* margin-top: 15% !important; */
 	/* transform: translate(-300px, 0px); */
 }
-
+.simplebar-scroll-content {
+	box-sizing: content-box !important;
+}
+.simplebar-content {
+	box-sizing: content-box !important;
+}
 /*=====  End of starnight page  ======*/
 
 /*=============================================

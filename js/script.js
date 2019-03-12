@@ -26,6 +26,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	});
 
 	new Siema();
+
+	fetchEventNames();
 });
 
 function gotoslide(x, y) {
@@ -33,4 +35,34 @@ function gotoslide(x, y) {
 	var navbar = document.getElementById("navbar-links");
 	navbar.style.height = "0";
 	navbar.style.backgroundColor = "transparent";
+}
+
+function fetchEventNames() {
+	$.ajax({
+		url: "http://culmyca19.herokuapp.com/eventname",
+		type: "POST",
+		data: { club: "brixx" }
+	})
+		.done(function(data) {
+			console.log("fetched events title data");
+			data.forEach(function(eventData) {
+				var categoryEvents = $(
+					"#" + eventData.category.toLowerCase() + "-events"
+				);
+				console.log(
+					"appending " + eventData.title + " to " + eventData.category
+				);
+				categoryEvents.append(
+					"<span class='nav-link'>" +
+						eventData.title.toLowerCase() +
+						"</span>"
+				);
+			});
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("finished adding event titles");
+		});
 }

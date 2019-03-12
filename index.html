@@ -14,6 +14,11 @@
 		<link rel="stylesheet" href="./css/theme/black.css" />
 		<link rel="stylesheet" href="./css/style.css" />
 		<link rel="stylesheet" href="./css/cursor.css" />
+		<script
+			src="http://code.jquery.com/jquery-3.3.1.min.js"
+			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			crossorigin="anonymous"
+		></script>
 		<link
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css"
@@ -62,7 +67,7 @@
 							<span class="_19">19</span>
 							<span class="culmyca">culmyca</span>
 						</div>
-						<div class="links-to-subsections">
+						<div class="links-to-subsections" data-simplebar>
 							<span
 								class="gallery nav-link"
 								onclick="Reveal.slide(0,1);"
@@ -91,11 +96,11 @@
 						<!-- siema carousel for image gallery -->
 						<div class="siema">
 							<div class="item">
-							<img
-								src="images/bg/drama.jpg"
-								alt="The Last of us"
-							/>
-							<!-- gallery -->
+								<img
+									src="images/bg/drama.jpg"
+									alt="The Last of us"
+								/>
+								<!-- gallery -->
 							</div>
 							<div class="item">
 								<img src="images/bg/home.jpg" alt="GTA V" />
@@ -118,6 +123,24 @@
 					<!-- register sectin -->
 					<section>
 						register
+						<div id="form-container" data-simplebar>
+							<form action="return false;">
+								<input type="text" placeholder="Full Name" />
+								<br />
+								<input type="email" placeholder="Email" />
+								<br />
+								<input type="text" placeholder="Phone Number" />
+								<br />
+								<input type="text" placeholder="College Name" />
+								<br />
+								<select name="" id="">
+									<option value="">Nukkad</option>
+									<option value="">Openmic</option>
+									<option value="">Stageplay</option>
+								</select>
+							</form>
+						</div>
+						<div id="register-right"></div>
 					</section>
 
 					<!-- categories section -->
@@ -132,7 +155,10 @@
 						<div class="events">
 							<span class="events">events</span>
 						</div>
-						<div class="links-to-subsections">
+						<div
+							class="links-to-subsections data-simplebar"
+							data-simplebar
+						>
 							<span
 								class="drama nav-link"
 								onclick="Reveal.slide(1,1);"
@@ -163,13 +189,14 @@
 
 					<!-- drama events section -->
 					<section
+						id="drama-section"
 						class="page-2_1"
 						data-background-image="./images/bg/drama.jpg"
 					>
-						<div class="drama-main">
+						<div class="event-main-heading">
 							drama
 						</div>
-						<p class="event-p">
+						<p class="category-details-p">
 							Nukkad Natak is a form of theatrical performance and
 							presentation in outdoor public space at the top of
 							their voice with enthusiastic and energetic music.
@@ -178,14 +205,11 @@
 							urbanization.
 						</p>
 
-						<div class="links-to-subsections">
-							<span class="nukkad nav-link">nukkad</span>
-							<span class="openmic nav-link">openmic</span>
-							<span class="stageplay nav-link">stageplay</span>
-							<span class="share-o-lekh nav-link"
-								>share-o-lekh</span
-							>
-						</div>
+						<div
+							id="drama-events"
+							class="links-to-subsections"
+							data-simplebar
+						></div>
 
 						<!-- navigate to literary events slide -->
 						<div class="to-below big-navigation-link">
@@ -194,8 +218,18 @@
 					</section>
 
 					<!-- literary events section -->
-					<section>
-						lierary events
+					<section id="literary-section">
+						<div class="event-main-heading">
+							literary
+						</div>
+
+						<p class="category-details-p">
+							Lorem ipsum dolor sit amet, consectetur adipiscing
+							elit, sed do eiusmod tempor incididunt ut labore et
+							dolore magna aliqua. Ut enim ad minim veniam, quis
+							nostrud exercitation ullamco laboris nisi ut aliquip
+							ex ea commodo consequat.
+						</p>
 
 						<!-- navigate to coding events slide -->
 						<div class="to-below big-navigation-link">
@@ -204,8 +238,24 @@
 					</section>
 
 					<!-- coding events section -->
-					<section>
-						coding events
+					<section id="coding-section">
+						<div class="event-main-heading">
+							coding
+						</div>
+
+						<p class="category-details-p">
+							Lorem ipsum dolor sit amet, consectetur adipiscing
+							elit, sed do eiusmod tempor incididunt ut labore et
+							dolore magna aliqua. Ut enim ad minim veniam, quis
+							nostrud exercitation ullamco laboris nisi ut aliquip
+							ex ea commodo consequat.
+						</p>
+
+						<div
+							id="coding-events"
+							class="links-to-subsections"
+							data-simplebar
+						></div>
 
 						<!-- navigate to dance events slide -->
 						<div class="to-below big-navigation-link">
@@ -214,15 +264,60 @@
 					</section>
 
 					<!-- dance events section -->
-					<section>
-						dance events
+					<section id="dance-section">
+						<div class="event-main-heading">
+							dance
+						</div>
 
-						<!-- navigate to dance events slide -->
+						<p class="category-details-p">
+							Lorem ipsum dolor sit amet, consectetur adipiscing
+							elit, sed do eiusmod tempor incididunt ut labore et
+							dolore magna aliqua. Ut enim ad minim veniam, quis
+							nostrud exercitation ullamco laboris nisi ut aliquip
+							ex ea commodo consequat.
+						</p>
+
+						<div
+							id="dance-events"
+							class="links-to-subsections"
+							data-simplebar
+						></div>
+
+						<!-- navigate to starnight slide -->
 						<div
 							class="big-navigation-link"
 							onclick="Reveal.slide(2,0);"
 						>
 							starnight
+						</div>
+					</section>
+
+					<!-- event details section -->
+					<section id="event-details-section">
+						<div class="event-details-container" data-simplebar>
+							<div class="event-main-heading">
+								event
+							</div>
+							<h6 id="event-description-heading">Description</h6>
+							<p id="event-description">
+								Lorem ipsum dolor sit amet consectetur adipisicing
+								elit. Consequatur alias obcaecati sit nostrum
+								excepturi ullam eaque, esse quisquam et dicta harum
+								exercitationem minima doloribus cupiditate! Omnis
+								sint quisquam velit. Nobis?
+							</p>
+							
+							<h6 id="event-rules-heading">Rules</h6>
+							<p id="event-rules-p">
+								1. Lorem ipsum dolor sit amet consectetur
+								adipisicing elit. <br />
+								1. Lorem ipsum dolor sit amet consectetur
+								adipisicing elit. <br />
+								1. Lorem ipsum dolor sit amet consectetur
+								adipisicing elit. <br />
+								1. Lorem ipsum dolor sit amet consectetur
+								adipisicing elit.
+							</p>
 						</div>
 					</section>
 				</section>
@@ -234,7 +329,7 @@
 							starnight
 						</div>
 						<br />
-						<div class="links-to-subsections">
+						<div class="links-to-subsections" data-simplebar>
 							<span
 								class="day-1 nav-link"
 								onclick="Reveal.slide(2,1);"
@@ -368,12 +463,16 @@
 
 				<!-- team -->
 				<section class="team">
-					DevelopingTEAM<br><br>
-					<div class="team-container"></div><!-- <span class="caption">Mister A </span> -->
-					<div class="team-container"></div><!-- <span class="caption">Mister B </span> -->
-					<div class="team-container"></div><!-- <span class="caption">Mister C </span> -->
-					<div class="team-container"></div><!-- <span class="caption">Mister D </span> -->
-						<!--<div class="caption">
+					DevelopingTEAM<br /><br />
+					<div class="team-container"></div>
+					<!-- <span class="caption">Mister A </span> -->
+					<div class="team-container"></div>
+					<!-- <span class="caption">Mister B </span> -->
+					<div class="team-container"></div>
+					<!-- <span class="caption">Mister C </span> -->
+					<div class="team-container"></div>
+					<!-- <span class="caption">Mister D </span> -->
+					<!--<div class="caption">
 						<div class="sub-caption">A</div>
 						<div class="sub-caption">A</div>
 						<div class="sub-caption">A</div>
