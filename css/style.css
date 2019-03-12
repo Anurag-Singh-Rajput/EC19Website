@@ -64,8 +64,7 @@ section {
 	white-space: nowrap;
 	width: 650px !important;
 	height: 64px !important;
-	overflow-x: scroll !important;
-	overflow-y: scroll !important;
+	/*overflow: hidden;*/
 }
 .links-to-subsections::before {
 	content: "";
@@ -90,6 +89,30 @@ section {
 	color: var(--orange);
 	cursor: pointer;
 }
+
+/*Team page*/
+
+.team {
+	font-size: 64px!important;
+	letter-spacing: 5px;
+}
+
+.team-container {
+	height: 160px;
+	width: 160px;
+	border-radius: 50%;
+	display: inline-block;
+	
+	border: 4px solid rgb(231, 141, 33)!important;
+	margin-left: 4%!important;
+}
+
+.sub-caption {
+	font-size: 24px;
+	display: inline-block;
+}
+
+/*Team Page Ends*/
 
 /*----------  Right arrow animation  ----------*/
 
@@ -299,7 +322,7 @@ section {
 	overflow: hidden;
 	left: 50%;
 	top: 55%;
-	background-color: #00000042;
+	background-color: #333;
 	border-radius: 5px;
 	position: fixed;
 	transition: all ease-in-out 0.5s;
