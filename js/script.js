@@ -40,8 +40,7 @@ function gotoslide(x, y) {
 function fetchEventNames() {
 	$.ajax({
 		url: "http://culmyca19.herokuapp.com/eventname",
-		type: "POST",
-		data: { club: "brixx" }
+		type: "POST"
 	})
 		.done(function(data) {
 			console.log("fetched events title data");
