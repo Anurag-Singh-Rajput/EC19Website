@@ -110,6 +110,21 @@ section {
 
 /*Team Page Ends*/
 
+/*Sponsors page */
+
+.container-images {
+	display: inline-block;
+	width: 25%;
+	height: 25%;
+}
+
+/*.container-images img {
+	width: 100%;
+	height: 60%;
+}*/
+
+/*Sponsors page ends*/
+
 /*Contact page*/
 
 .ymca {
