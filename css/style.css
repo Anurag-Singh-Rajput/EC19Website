@@ -95,6 +95,7 @@ section {
 .team {
 	font-size: 64px!important;
 	letter-spacing: 5px;
+	text-align: center;	
 }
 
 .team-container {
@@ -107,12 +108,59 @@ section {
 	margin-left: 4%!important;
 }
 
-.sub-caption {
-	font-size: 24px;
+/*Team Page Ends*/
+
+/*Contact page*/
+
+.ymca {
+	border: 2px solid rgb(231, 141, 33)!important;
+}
+
+.ymca h1{
+	font-size: 30px;
+	margin-bottom: 4px;
+	margin-top: 10px;
+}
+
+.ymca h5{
+	font-size: 12px;
+	margin-bottom: 5%;
+}
+
+.map {
+	border: 2px solid rgb(231, 141, 33)!important;
+	float: right;
 	display: inline-block;
 }
 
-/*Team Page Ends*/
+.ymca-logo {
+	float: left;
+	width: 8%;
+	height: 8%;
+	border: none!important;
+	background: transparent!important;
+	margin-left: 2%!important;
+	margin-top: 1%!important;
+}
+
+.address {
+	display: inline-block;
+	float: left;
+	text-align: left;
+}
+
+.address h5{
+	margin: 0px;	
+	font-size: 16px;
+}
+
+.address h4{
+	margin: 0px;
+	font-size: 24px;
+	text-decoration: underline;
+}
+
+/*Contact page ends*/
 
 /*----------  Right arrow animation  ----------*/
 
