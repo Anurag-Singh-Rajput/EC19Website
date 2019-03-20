@@ -96,7 +96,7 @@ section {
 .team {
 	font-size: 64px !important;
 	letter-spacing: 5px;
-	text-align: center;	
+	text-align: center;
 }
 
 .team-container {
@@ -127,24 +127,29 @@ section {
 /*Sponsors page ends*/
 
 /*Contact page*/
-
-.ymca {
-	border: 2px solid rgb(231, 141, 33)!important;
+.contact-container {
+	margin-left: -60px !important;
+	margin-top: -80px !important;
+	width: 95%;
 }
 
-.ymca h1{
+.ymca {
+	border: 2px solid rgb(231, 141, 33) !important;
+}
+
+.ymca h1 {
 	font-size: 30px;
 	margin-bottom: 4px;
 	margin-top: 10px;
 }
 
-.ymca h5{
+.ymca h5 {
 	font-size: 12px;
 	margin-bottom: 5%;
 }
 
 .map {
-	border: 2px solid rgb(231, 141, 33)!important;
+	border: 2px solid rgb(231, 141, 33) !important;
 	float: right;
 	display: inline-block;
 }
@@ -153,10 +158,10 @@ section {
 	float: left;
 	width: 8%;
 	height: 8%;
-	border: none!important;
-	background: transparent!important;
-	margin-left: 2%!important;
-	margin-top: 1%!important;
+	border: none !important;
+	background: transparent !important;
+	margin-left: 2% !important;
+	margin-top: 1% !important;
 }
 
 .address {
@@ -165,15 +170,50 @@ section {
 	text-align: left;
 }
 
-.address h5{
-	margin: 0px;	
+.address h5 {
+	margin: 0px;
 	font-size: 16px;
 }
 
-.address h4{
+.address h4 {
 	margin: 0px;
 	font-size: 24px;
 	text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+	.address {
+		display: block;
+		float: none;
+		clear: both;
+		text-align: center;
+	}
+	.ymca h1 {
+		font-size: 30px;
+	}
+	.ymca h5 {
+		font-size: 12px;
+	}
+	.contact-container {
+		margin-top: -350px !important;
+		width: 96% !important;
+		margin-left: 0px !important;
+	}
+	.map {
+		margin-top: 150px !important;
+		text-align: left;
+		float: none;
+		transform: scale(1.5);
+		clear: both;
+	}
+	.address h5 {
+		font-size: 22px;
+		text-transform: capitalize;
+	}
+	.address h4 {
+		font-size: 28px;
+		text-transform: capitalize;
+	}
 }
 
 /*Contact page ends*/
@@ -275,6 +315,10 @@ section {
 	text-align: right;
 	margin-right: 36px;
 	right: 0;
+	transform: translateY(-30px);
+}
+#ymcalogo {
+	transform: translateY(16px);
 }
 
 .nav > li {
@@ -297,6 +341,18 @@ section {
 	color: var(--orange);
 }
 
+#jcboselogo {
+	margin-left: 130px !important;
+	transform: translateY(-10px);
+}
+#back-arrow {
+	transition: all 0.3s;
+}
+#back-arrow:hover {
+	color: var(--orange);
+	transform: translateY(10px) scale(1.2);
+	-webkit-transform: scale(1.2);
+}
 .navbar-left {
 	float: left !important;
 	position: fixed;
@@ -350,6 +406,7 @@ section {
 		margin-left: 36px;
 		left: 0;
 		z-index: 0 !important;
+		transform: translateY(0);
 	}
 	.nav > .navbar-links > li {
 		display: inline-block;
@@ -371,6 +428,13 @@ section {
 		margin-top: 28px;
 		margin-left: 24px !important;
 		font-size: 20px;
+	}
+	#jcboselogo {
+		margin-left: 90px !important;
+		transform: translateY(-10px);
+	}
+	#ymcalogo {
+		display: none;
 	}
 }
 
@@ -555,10 +619,10 @@ section {
 =============================================*/
 
 .category-details-p,
-#event-description,
-#event-rules-p {
+.event-description,
+.event-rules-p {
 	color: #f5a623;
-	font-size: 20px !important;
+	font-size: 16px !important;
 	text-align: left;
 	font-weight: bold !important;
 	font-family: LucidaGrande !important;
@@ -595,18 +659,40 @@ section {
 =            Event Details section            =
 =============================================*/
 
+.event-details-main-heading {
+	font-size: 120px !important;
+	font-family: HiraKakuStd-W8 !important;
+	text-align: left !important;
+}
+
+#event-details-container {
+	height: calc(90vh) !important;
+	width: 100%;
+	overflow: auto;
+}
+
 #event-details-section {
 	width: 100%;
 	height: 5000px;
 }
-#event-description-heading,
-#event-rules-heading {
+.event-description-heading,
+.event-rules-heading {
 	text-align: left !important;
-	font-size: 22px;
+	font-size: 20px;
 	text-transform: capitalize;
 	font-family: HiraKakuStd-W8 !important;
 	margin-top: 12px;
 	margin-bottom: -12px;
+}
+
+@media screen and (max-width: 600px) {
+	#event-details-container {
+		height: 100% !important;
+	}
+	.event-description-heading,
+	.event-rules-heading {
+		font-size: 32px;
+	}
 }
 
 /*=====  End of Event Details section  ======*/
@@ -637,9 +723,9 @@ section {
 =            scrollbar            =
 =============================================*/
 
-[data-simplebar] {
+/* [data-simplebar] {
 	overflow: x;
-}
+} */
 
 /*=====  End of scrollbar  ======*/
 
@@ -667,8 +753,7 @@ section {
 		margin-left: 5vw !important;
 	}
 	/*----------  about  ----------*/
-	.about-section {
-		width: 100% !important;
+	.about-section-content {
 		margin-top: calc(-25vh) !important;
 		padding: 0 40px !important;
 	}
