@@ -56,6 +56,7 @@
 				<li onclick="gotoslide(5,0)"><a>contact</a></li>
 				<li onclick="gotoslide(6,0)"><a>sponsors</a></li>
 				<li onclick="gotoslide(7,0)"><a>team</a></li>
+				<li onclick="gotoslide(1,5)"><a>event-details-page(for testing)</a></li>
 				<li><a href="http://www.ymcaust.ac.in"><img id="ymcalogo" src="./images/ymca.png" alt="YMCA Logo" height="50px"><a>
 				</li>
 			</ul>
@@ -129,8 +130,8 @@
 					<!-- register sectin -->
 					<section>
 						register
-						<div id="form-container" data-simplebar>
-							<form action="return false;">
+						<div id="registeration-form-container" data-simplebar>
+							<form id="registeration-form" action="return false;">
 								<input type="text" placeholder="Full Name" />
 								<br />
 								<input type="email" placeholder="Email" />
@@ -305,70 +306,64 @@
 					>
 						<div id="event-details-container" data-simplebar>
 							<div class="event-details-main-heading">
-								event
+								event name goes here
 							</div>
-							<h6 class="event-description-heading">
+							<h6 class="event-description-heading event-subheading">
 								Description
 							</h6>
-							<p class="event-description">
+							
+							<p class="event-description event-details-p">
 								Lorem ipsum dolor sit amet consectetur
 								adipisicing elit. Consequatur alias obcaecati
 								sit nostrum excepturi ullam eaque, esse quisquam
 								et dicta harum exercitationem minima doloribus
 								cupiditate! Omnis sint quisquam velit. Nobis?
 							</p>
+							
+							<h6 class="event-subheading">Event Type</h6>
+							<p class="event-details-p">Solo</p>
 
-							<h6 class="event-rules-heading">Rules</h6>
-							<p class="event-rules-p">
+							<h6 class="event-rules-heading event-subheading">Rules</h6>
+							<p class="event-rules-p event-details-p event-details-p">
 								1. Lorem ipsum dolor sit amet consectetur
-								adipisicing elit. <br />
+								adipisicing elit. lorem ipsum dolor sit. <br />
 								1. Lorem ipsum dolor sit amet consectetur
-								adipisicing elit. <br />
+								adipisicing elit. lorem ipsum dolor sit. <br />
 								1. Lorem ipsum dolor sit amet consectetur
-								adipisicing elit. <br />
+								adipisicing elit. lorem ipsum dolor sit. <br />
 								1. Lorem ipsum dolor sit amet consectetur
-								adipisicing elit.
+								adipisicing elit. lorem ipsum dolor sit. <br />
+								1. Lorem ipsum dolor sit amet consectetur
+								adipisicing elit. lorem ipsum dolor sit.
 							</p>
-							<p class="event-rules-p">
-								1. Lorem ipsum dolor sit amet consectetur
-								adipisicing elit. <br />
-								1. Lorem ipsum dolor sit amet consectetur
-								adipisicing elit. <br />
-								1. Lorem ipsum dolor sit amet consectetur
-								adipisicing elit. <br />
-								1. Lorem ipsum dolor sit amet consectetur
-								adipisicing elit.
+
+							<h6 class="event-subheading">Date and Time</h6>
+							<p class="event-details-p">
+								12pm (25th April, 2019) to 
+								<!-- <br> -->
+								1pm (25th April, 2019)
 							</p>
-							<p class="event-rules-p">
-								1. Lorem ipsum dolor sit amet consectetur
-								adipisicing elit. <br />
-								1. Lorem ipsum dolor sit amet consectetur
-								adipisicing elit. <br />
-								1. Lorem ipsum dolor sit amet consectetur
-								adipisicing elit. <br />
-								1. Lorem ipsum dolor sit amet consectetur
-								adipisicing elit.
+
+							<h6 class="event-subheading">Venue</h6>
+							<p class="event-details-p">CC-08</p>
+
+							<h6 class="event-subheading">Prizes</h6>
+								<p class="event-details-p"><span class="text-white">First: </span> Rs.500 <br>
+								<span class="text-white">Second: </span> Rs.300 <br>
+								<span class="text-white">Third: </span> Rs. 100
 							</p>
-							<p class="event-rules-p">
-								1. Lorem ipsum dolor sit amet consectetur
-								adipisicing elit. <br />
-								1. Lorem ipsum dolor sit amet consectetur
-								adipisicing elit. <br />
-								1. Lorem ipsum dolor sit amet consectetur
-								adipisicing elit. <br />
-								1. Lorem ipsum dolor sit amet consectetur
-								adipisicing elit.
+
+							<h6 class="event-subheading">Coordinators</h6>
+							<p class="event-details-p"><span class="text-white">Prince Batra</span> (9999988888)
+								<br>
+								<span class="text-white">Prince Batra</span> (9999988888)
 							</p>
-							<p class="event-rules-p">
-								1. Lorem ipsum dolor sit amet consectetur
-								adipisicing elit. <br />
-								1. Lorem ipsum dolor sit amet consectetur
-								adipisicing elit. <br />
-								1. Lorem ipsum dolor sit amet consectetur
-								adipisicing elit. <br />
-								1. Lorem ipsum dolor sit amet consectetur
-								adipisicing elit.
-							</p>
+
+							<input type="button" value="Register" class="event-register-button">
+							<br><br><br>
+						</div>
+						<div class="to-right big-navigation-link">
+							next
 						</div>
 					</section>
 				</section>
