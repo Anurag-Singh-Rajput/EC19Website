@@ -15,7 +15,7 @@ $.preload(images,{
       $(".loading").fadeOut(1000);
       setTimeout(function(){
         myFunction();
-      },1000)
+      },1200)
       $(".bla").fadeOut(1000);
      },500)
     };
