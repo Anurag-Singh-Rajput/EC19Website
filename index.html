@@ -25,9 +25,27 @@
 		/>
 		<script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.js"></script>
 		<script src="./js/siema.min.js"></script>
+		<script src="./js/preload.js"></script>
+		<script src="./js/pre.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 	</head>
 
 	<body>
+
+		<!-- Pre-Loader -->
+
+	<div class="loading"><span class="bla">Loading <span class="count">0</span></span></div>
+	<div class="loader">
+		<hr class="line-1"><br>
+		<span class="ec">Welcome</span>
+		<span class="ec-x">Elements Culmyca</span><br>
+		<hr class="line-2">
+	</div>
+	<div class="preloader-top"> 
+		<hr class="line-x">
+	</div>
+	<div class="preloader-bottom"></div>
+
 		<!-- The nav bar -->
 		<div class="nav">
 			<span class="navbar-left" id="jcboselogo">
@@ -627,4 +645,297 @@
 		<!-- javascript -->
 		<script src="./js/script.js"></script>
 	</body>
+	<script>
+		function myFunction(){
+
+		var y = $(window).width();
+		if (y > 600){
+
+		$('.line-1').css('width', '0%');
+		$('.line-1').css('width', '60%');
+		$('.line-2').css('width', '0%');
+		$('.line-2').css('width', '60%');
+		$('.preloader-top').css('animation-delay', '5.5s');
+		$('.preloader-bottom').css('animation-delay', '5.5s');
+
+		$('.line-1')
+		  .delay(800)
+		  .queue(function (next) { 
+		    $(this).css({
+		    	transform: 'translate(0px, -15px)'
+		    }); 
+		    next(); 
+		  });
+
+		$('.line-2')
+		  .delay(800)
+		  .queue(function (next) { 
+		    $(this).css({
+		    	transform: 'translate(0px, 15px)'
+		    }); 
+		    next(); 
+		  });
+
+		  $('.ec')
+		  .delay(900)
+		  .queue(function (next) { 
+		    $(this).css({
+		    	visibility: 'visible',
+		    	opacity: '1'
+		    }); 
+		    next(); 
+		  });
+
+		  $('.line-1')
+		  .delay(800)
+		  .queue(function (next) { 
+		    $(this).css({
+		    	transform: 'translate(0px, 140px)'
+		    }); 
+		    next(); 
+		  });
+
+		$('.line-2')
+		  .delay(800)
+		  .queue(function (next) { 
+		    $(this).css({
+		    	transform: 'translate(0px, -150px)'
+		    }); 
+		    next(); 
+		  });
+
+		  $('.ec')
+		  .delay(800)
+		  .queue(function (next) { 
+		    $(this).css({
+		    	visibility: 'visible',
+		    	opacity: '0',
+		    	transition: '0s'
+		    }); 
+		    next(); 
+		  });
+
+		  $('.ec')
+		  .delay(100)
+		  .queue(function (next) { 
+		    $(this).css({
+		    	display: 'none'
+		    }); 
+		    next(); 
+		  });
+
+		$('.line-1')
+		  .delay(800)
+		  .queue(function (next) { 
+		    $(this).css({
+		    	transform: 'translate(0px, 38px)'
+		    }); 
+		    next(); 
+		  });
+
+		$('.line-2')
+		  .delay(800)
+		  .queue(function (next) { 
+		    $(this).css({
+		    	transform: 'translate(0px, -72px)'
+		    }); 
+		    next(); 
+		  });
+
+		  $('.ec-x')
+		  .delay(1800)
+		  .queue(function (next) { 
+		    $(this).css({
+		    	visibility: 'visible',
+		    	opacity: '1',
+		    	transition: '.5s',
+		    	display: 'inline-block'
+		    }); 
+		    next(); 
+		  });
+
+		  $('.ec-x')
+		  .delay(600)
+		  .queue(function (next) { 
+		    $(this).css({
+		    	visibility: 'visible',
+		    	opacity: '0',
+		    	transition: '.2s'
+		    }); 
+		    next(); 
+		  });
+
+		  $('.line-1')
+		  .delay(200)
+		  .queue(function (next) { 
+		    $(this).css({
+		    	width: '100%',
+		    	transition: '.5s'
+		    }); 
+		    next(); 
+		  });
+
+		$('.line-2')
+		  .delay(200)
+		  .queue(function (next) { 
+		    $(this).css({
+		    	width: '100%',
+		    	transition: '.5s'
+		    }); 
+		    next();
+		  });
+
+		  $('.loader')
+		  .delay(3200)
+		  .queue(function (next) { 
+		    $(this).css({
+		    	display: 'none'
+		    }); 
+		    next();
+		  });
+
+		}
+
+		  var x = $(window).width();
+		  if (x < 600){
+
+			  	$('.line-1')
+			  .delay(800)
+			  .queue(function (next) { 
+			    $(this).css({
+			    	transform: 'translate(0px, -15px)'
+			    }); 
+			    next(); 
+			  });
+
+			$('.line-2')
+			  .delay(800)
+			  .queue(function (next) { 
+			    $(this).css({
+			    	transform: 'translate(0px, 15px)'
+			    }); 
+			    next(); 
+			  });
+
+			  $('.ec')
+			  .delay(900)
+			  .queue(function (next) { 
+			    $(this).css({
+			    	visibility: 'visible',
+			    	opacity: '1'
+			    }); 
+			    next(); 
+			  });
+
+			  $('.line-1')
+			  .delay(800)
+			  .queue(function (next) { 
+			    $(this).css({
+			    	transform: 'translate(0px, 60px)'
+			    }); 
+			    next(); 
+			  });
+
+			$('.line-2')
+			  .delay(800)
+			  .queue(function (next) { 
+			    $(this).css({
+			    	transform: 'translate(0px, -60px)'
+			    }); 
+			    next(); 
+			  });
+
+			  $('.ec')
+			  .delay(800)
+			  .queue(function (next) { 
+			    $(this).css({
+			    	visibility: 'visible',
+			    	opacity: '0',
+			    	transition: '0s'
+			    }); 
+			    next(); 
+			  });
+
+			  // $('.ec')
+			  // .delay()
+			  // .queue(function (next) { 
+			  //   $(this).css({
+			  //   	display: 'none'
+			  //   }); 
+			  //   next(); 
+			  // });
+
+			$('.line-1')
+			  .delay(800)
+			  .queue(function (next) { 
+			    $(this).css({
+			    	transform: 'translate(0px, 26px)'
+			    }); 
+			    next(); 
+			  });
+
+			$('.line-2')
+			  .delay(800)
+			  .queue(function (next) { 
+			    $(this).css({
+			    	transform: 'translate(0px, -10px)'
+			    }); 
+			    next(); 
+			  });
+
+			  $('.ec-x')
+			  .delay(1800)
+			  .queue(function (next) { 
+			    $(this).css({
+			    	visibility: 'visible',
+			    	opacity: '1',
+			    	transition: '.5s',
+			    	display: 'inline-block'
+			    }); 
+			    next(); 
+			  });
+
+			  $('.ec-x')
+			  .delay(600)
+			  .queue(function (next) { 
+			    $(this).css({
+			    	visibility: 'visible',
+			    	opacity: '0',
+			    	transition: '.2s'
+			    }); 
+			    next(); 
+			  });
+
+			  $('.line-1')
+			  .delay(200)
+			  .queue(function (next) { 
+			    $(this).css({
+			    	width: '100%',
+			    	transition: '.5s'
+			    }); 
+			    next(); 
+			  });
+
+			$('.line-2')
+			  .delay(200)
+			  .queue(function (next) { 
+			    $(this).css({
+			    	width: '100%',
+			    	transition: '.5s'
+			    }); 
+			    next();
+			  });
+
+			  $('.loader')
+			  .delay(3600)
+			  .queue(function (next) { 
+			    $(this).css({
+			    	display: 'none'
+			    }); 
+			    next();
+			  });
+
+		  }
+	}
+	</script>
 </html>

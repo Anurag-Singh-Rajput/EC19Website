@@ -47,10 +47,141 @@
 /*=============================================
 =            global            =
 =============================================*/
-
 .text-white {
 	color: white !important;
 }
+
+/*=====  End of global  ======*/
+
+/*Preloader starts*/
+
+.percent {
+	margin-top: 400px!important;
+}
+
+.loading
+{
+	background-color: black;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+	color: white;
+	font-size: 50px;
+	font-family: 'Raleway', sans-serif;
+	padding-top: 23%;
+	transition: .5s;
+	z-index: 100!important;
+}
+.count
+{
+  color:white;
+}
+
+.bla {
+	color: white;
+}
+
+.loader {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	background-color: black;
+	z-index: +1000!important;
+	overflow: hidden;
+	text-align: center;
+	}
+
+.preloader-bottom {
+	position: fixed;
+	height: 50%;
+	width: 100%;
+	z-index: 10;
+	background-color: black;
+	bottom: 0px;
+	animation: right 1s cubic-bezier(0.37, 1.11, 0.21, 0.75);
+	animation-fill-mode: forwards;
+	/*animation-delay: 5s;*/
+	overflow: hidden;
+}
+
+.preloader-top {
+	position: fixed;
+	height: 50%;
+	width: 100%;
+	z-index: 10;
+	background-color: black;
+	transition: .5s;
+	animation: left 1s cubic-bezier(0.37, 1.11, 0.21, 0.75);
+	animation-fill-mode: forwards;
+	/*animation-delay: 5s;*/
+	overflow: hidden;
+}
+
+.line-x {
+	border: 2px solid white;
+	background-color: white;
+	margin-top: 388.5px;
+	z-index: 999;
+}
+
+.line-y {
+	border: 1px solid white;
+	background-color: white;
+	z-index: 999;
+	margin-bottom: 20px;
+	margin-top: 0px;
+}
+
+.line-1 {
+	display: inline-block;
+	background-color: white;
+	border: 1px solid white;
+	width: 0%;
+	margin-top: 350px;
+	margin-bottom: 0%;
+	transition: .3s;
+	transform: translate(0px, 32px);
+}
+.line-2 {
+	display: inline-block;
+	background-color: white;
+	border: 1px solid white;
+	width: 0%;
+	margin-top: 0.5%;
+	transition: .3s;
+	transform: translate(0px, -80px);
+}
+.ec {
+	font-size: 100px;
+	color: white;
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s, opacity 0.5s linear;
+	display: inline-block;
+	font-family: 'Raleway', sans-serif;
+}
+
+.ec-x {
+	font-size: 100px;
+	color: white;
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s, opacity 0.5s linear;
+	display: none;
+	transition: .5s;
+	font-family: 'Raleway', sans-serif;
+}
+
+@keyframes left {
+	from {height: 50%;}
+	to {height: 0%;}
+}
+@keyframes right {
+	from {height: 50%;}
+	to {height: 0%;}
+}
+
+/*Preloader ends*/
 
 section {
 	margin-left: calc(-5vw) !important;
@@ -293,8 +424,6 @@ section {
 		font-size: 48px !important;
 	}
 }
-
-/*=====  End of global  ======*/
 
 /*=============================================
 =            navbar
