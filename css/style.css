@@ -56,25 +56,23 @@
 /*Preloader starts*/
 
 .percent {
-	margin-top: 400px!important;
+	margin-top: 400px !important;
 }
 
-.loading
-{
+.loading {
 	background-color: black;
 	height: 100%;
 	width: 100%;
 	text-align: center;
 	color: white;
 	font-size: 50px;
-	font-family: 'Raleway', sans-serif;
-	padding-top: 23%;
-	transition: .5s;
-	z-index: 100!important;
+	font-family: "Raleway", sans-serif;
+	padding-top: 350px;
+	transition: 0.5s;
+	z-index: 100 !important;
 }
-.count
-{
-  color:white;
+.count {
+	color: white;
 }
 
 .bla {
@@ -86,10 +84,10 @@
 	height: 100%;
 	width: 100%;
 	background-color: black;
-	z-index: +1000!important;
+	z-index: +1000 !important;
 	overflow: hidden;
 	text-align: center;
-	}
+}
 
 .preloader-bottom {
 	position: fixed;
@@ -110,7 +108,7 @@
 	width: 100%;
 	z-index: 10;
 	background-color: black;
-	transition: .5s;
+	transition: 0.5s;
 	animation: left 1s cubic-bezier(0.37, 1.11, 0.21, 0.75);
 	animation-fill-mode: forwards;
 	/*animation-delay: 5s;*/
@@ -139,7 +137,7 @@
 	width: 0%;
 	margin-top: 350px;
 	margin-bottom: 0%;
-	transition: .3s;
+	transition: 0.3s;
 	transform: translate(0px, 32px);
 }
 .line-2 {
@@ -148,7 +146,7 @@
 	border: 1px solid white;
 	width: 0%;
 	margin-top: 0.5%;
-	transition: .3s;
+	transition: 0.3s;
 	transform: translate(0px, -80px);
 }
 .ec {
@@ -158,7 +156,7 @@
 	opacity: 0;
 	transition: visibility 0s, opacity 0.5s linear;
 	display: inline-block;
-	font-family: 'Raleway', sans-serif;
+	font-family: "Raleway", sans-serif;
 }
 
 .ec-x {
@@ -168,17 +166,25 @@
 	opacity: 0;
 	transition: visibility 0s, opacity 0.5s linear;
 	display: none;
-	transition: .5s;
-	font-family: 'Raleway', sans-serif;
+	transition: 0.5s;
+	font-family: "Raleway", sans-serif;
 }
 
 @keyframes left {
-	from {height: 50%;}
-	to {height: 0%;}
+	from {
+		height: 50%;
+	}
+	to {
+		height: 0%;
+	}
 }
 @keyframes right {
-	from {height: 50%;}
-	to {height: 0%;}
+	from {
+		height: 50%;
+	}
+	to {
+		height: 0%;
+	}
 }
 
 /*Preloader ends*/
@@ -601,8 +607,7 @@ section {
 	font-size: 120px !important;
 	top: calc(25vh) !important;
 	right: calc(-55vh) !important;
-	color: white !important;
-	color: #9b9b9b !important;
+	color: #bbbbbb !important;
 	font-family: HiraKakuStdN-W8;
 	clear: none;
 	font-weight: bold !important;
@@ -902,6 +907,53 @@ section {
 }
 
 /*=====  End of scrollbar  ======*/
+
+/*=============================================
+=            Event Registeration Section            =
+=============================================*/
+
+#registeration-form-container {
+	overflow-x: hidden;
+}
+
+#registeration-form input[type],
+#registeration-form select {
+	padding: 16px 24px;
+	background-color: rgba(255, 255, 255, 0.3);
+	color: white;
+	font-family: "Raleway", sans-serif;
+	font-size: 24px;
+	border: none;
+	border-radius: 25px;
+	float: left;
+	clear: both;
+	margin: 12px 0;
+}
+#registeration-form input[type]::placeholder {
+	color: #bbbbbb;
+}
+#registeration-form select {
+	color: #bbbbbb;
+}
+.registeration-register-button {
+	color: white;
+	font-size: 24px;
+	padding: 14px 120px !important;
+	border: none;
+	border-radius: 25px;
+	font-family: "Raleway", sans-serif;
+	background-color: rgba(255, 255, 255, 0.3);
+	border: 2px solid transparent !important;
+}
+.registeration-register-button:hover {
+	color: var(--orange) !important;
+	font-weight: bold;
+	cursor: pointer;
+	border: 2px solid var(--orange) !important;
+	background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/*=====  End of Event Registeration Section  ======*/
 
 /*=============================================
 =            Media queries            =
