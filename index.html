@@ -799,6 +799,13 @@
 		  var x = $(window).width();
 		  if (x < 600){
 
+		$('.line-1').css('width', '0%');
+		$('.line-1').css('width', '60%');
+		$('.line-2').css('width', '0%');
+		$('.line-2').css('width', '60%');
+		$('.preloader-top').css('animation-delay', '5.8s');
+		$('.preloader-bottom').css('animation-delay', '5.8s');
+
 			  	$('.line-1')
 			  .delay(800)
 			  .queue(function (next) { 
@@ -856,14 +863,14 @@
 			    next(); 
 			  });
 
-			  // $('.ec')
-			  // .delay()
-			  // .queue(function (next) { 
-			  //   $(this).css({
-			  //   	display: 'none'
-			  //   }); 
-			  //   next(); 
-			  // });
+			  $('.ec')
+			  .delay(100)
+			  .queue(function (next) { 
+			    $(this).css({
+			    	display: 'none'
+			    }); 
+			    next(); 
+			  });
 
 			$('.line-1')
 			  .delay(800)
@@ -884,7 +891,7 @@
 			  });
 
 			  $('.ec-x')
-			  .delay(1800)
+			  .delay(1850)
 			  .queue(function (next) { 
 			    $(this).css({
 			    	visibility: 'visible',
