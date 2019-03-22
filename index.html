@@ -14,16 +14,18 @@
 		<link rel="stylesheet" href="./css/theme/black.css" />
 		<link rel="stylesheet" href="./css/style.css" />
 		<link rel="stylesheet" href="./css/cursor.css" />
+		<link rel="stylesheet" href="./css/perfect-scrollbar.css">
 		<script
 			src="https://code.jquery.com/jquery-3.3.1.min.js"
 			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 			crossorigin="anonymous"
 		></script>
-		<link
+		<!-- <link
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css"
-		/>
-		<script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.js"></script>
+		/> -->
+		<script src="./js/perfectScrollbar/perfect-scrollbar.min.js"></script>
+		<!-- <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.js"></script> -->
 		<script src="./js/siema.min.js"></script>
 		<script src="./js/preload.js"></script>
 		<script src="./js/pre.js"></script>
@@ -74,7 +76,7 @@
 				<li onclick="gotoslide(5,0)"><a>contact</a></li>
 				<li onclick="gotoslide(6,0)"><a>sponsors</a></li>
 				<li onclick="gotoslide(7,0)"><a>team</a></li>
-				<li onclick="gotoslide(1,5)"><a>event-details-page</a></li>
+				<!-- <li onclick="gotoslide(1,5)"><a>event-details-page</a></li> -->
 				<li><a href="http://www.ymcaust.ac.in"><img id="ymcalogo" src="./images/ymca.png" alt="YMCA Logo" height="50px"><a>
 				</li>
 			</ul>
@@ -92,28 +94,15 @@
 							<span class="_19">19</span>
 							<span class="culmyca">culmyca</span>
 						</div>
-						<div class="links-to-subsections" data-simplebar>
-							<span
-								class="gallery nav-link"
-								onclick="Reveal.slide(0,1);"
-								>gallery</span
-							>
-							<span
-								class="register nav-link"
-								onclick="Reveal.slide(0,2);"
-								>register</span
-							>
-							<span
-								class="categories nav-link"
-								onclick="Reveal.slide(0,3);"
-								>categories</span
-							>
+						<div class="links-to-subsections" >
+							<span class="gallery nav-link" onclick="Reveal.slide(0,1);">gallery</span>
+							<span class="register nav-link" onclick="Reveal.slide(0,2);">register</span>
+							<span class="nav-link" onclick="Reveal.slide(1,0);">events</span>
+							<span class="nav-link" onclick="Reveal.slide(2,0);">starnight</span>
 						</div>
 
 						<!-- navigate to events -->
-						<div class="to-right big-navigation-link">
-							events
-						</div>
+						<div class="to-right big-navigation-link">events</div>
 					</section>
 
 					<!-- gallery section -->
@@ -145,9 +134,9 @@
 						</div>
 					</section>
 
-					<!-- register sectin -->
+					<!-- register section -->
 					<section>
-						<div id="registeration-form-container" data-simplebar>
+						<div id="registeration-form-container" >
 							<form id="registeration-form" action="return false;">
 								<input type="text" size="35" placeholder="Full Name" />
 								<br />
@@ -158,66 +147,116 @@
 								<input type="text" size="35" placeholder="College Name" />
 								<br />
 								<select name="" id="">
-									<option value="">Nukkad</option>
-									<option value="">Openmic</option>
-									<option value="">Stageplay stageplay 3</option>
+									<option value="">Select</option>
 								</select>
-								<input type="button" value="Register" class="registeration-register-button">
+								<input type="button" value="Register" id="registeration-register-button">
 							</form>
 						</div>
 						<div id="register-right"></div>
-					</section>
-
-					<!-- categories section -->
-					<section>
-						categories
 					</section>
 				</section>
 
 				<!-- events slide -->
 				<section data-background-image="images/bg/drama.jpg">
 					<section>
-						<div class="events">
-							<span class="events">events</span>
-						</div>
-						<div
-							class="links-to-subsections data-simplebar"
-							data-simplebar
-						>
-							<span
-								class="drama nav-link"
-								onclick="Reveal.slide(1,1);"
-								>drama</span
-							>
-							<span
-								class="literary nav-link"
-								onclick="Reveal.slide(1,2);"
-								>literary</span
-							>
-							<span
-								class="coding nav-link"
-								onclick="Reveal.slide(1,3);"
-								>coding</span
-							>
-							<span
-								class="dance nav-link"
-								onclick="Reveal.slide(1,4);"
-								>dance</span
-							>
+						<div class="events"><span class="events">events</span></div>
+						<div class="links-to-subsections ">
+							<span class="nav-link" onclick="Reveal.slide(1,1);">coding</span>
+							<span class="nav-link" onclick="Reveal.slide(1,2);">dance</span>
+							<span class="nav-link" onclick="Reveal.slide(1,3);">arts</span>
+							<span class="nav-link" onclick="Reveal.slide(1,4);">music</span>
+							<span class="nav-link" onclick="Reveal.slide(1,5);">drama</span>
+							<span class="nav-link" onclick="Reveal.slide(1,6);">automobiles</span>
+							<span class="nav-link" onclick="Reveal.slide(1,7);">electrical</span>
+							<span class="nav-link" onclick="Reveal.slide(1,8);">electronics</span>
+							<span class="nav-link" onclick="Reveal.slide(1,9);">literary</span>
+							<span class="nav-link" onclick="Reveal.slide(1,10);">photography&designing</span>
+							<span class="nav-link" onclick="Reveal.slide(1,11);">fun events</span>
+							<span class="nav-link" onclick="Reveal.slide(1,12);">mechanical</span>
+							<span class="nav-link" onclick="Reveal.slide(1,13);">social-cultural</span>
+							<span class="nav-link" onclick="Reveal.slide(1,14);">technofun</span>
 						</div>
 
 						<!-- navigate to starnight slide -->
-						<div class="to-right big-navigation-link">
-							Starnight
+						<div class="to-right big-navigation-link">starnight</div>
+					</section>
+
+					<!-- coding events section -->
+					<section>
+						<div class="event-main-heading">
+							coding
 						</div>
+						<p class="category-details-p">
+							Lorem ipsum dolor sit amet, consectetur adipiscing
+							elit, sed do eiusmod tempor incididunt ut labore et
+							dolore magna aliqua. Ut enim ad minim veniam, quis
+							nostrud exercitation ullamco laboris nisi ut aliquip
+							ex ea commodo consequat.
+						</p>
+						<div id="manan-events" class="links-to-subsections" ></div>
+						<!-- navigate to dance events slide -->
+						<div class="to-below big-navigation-link">dance</div>
+					</section>
+
+					<!-- dance events section -->
+					<section>
+						<div class="event-main-heading">
+							dance
+						</div>
+						<p class="category-details-p">
+							Lorem ipsum dolor sit amet, consectetur adipiscing
+							elit, sed do eiusmod tempor incididunt ut labore et
+							dolore magna aliqua. Ut enim ad minim veniam, quis
+							nostrud exercitation ullamco laboris nisi ut aliquip
+							ex ea commodo consequat.
+						</p>
+						<div id="natraja-events" class="links-to-subsections" ></div>
+						<!-- navigate to arts events slide -->
+						<div class="to-below big-navigation-link">arts</div>
+					</section>
+
+					<!-- arts events section -->
+					<section data-background-image="./images/bg/drama.jpg">
+						<div class="event-main-heading">
+							arts
+						</div>
+						<p class="category-details-p">
+							Nukkad Natak is a form of theatrical performance and
+							presentation in outdoor public space at the top of
+							their voice with enthusiastic and energetic music.
+							Feel closer to your roots by submerging in the art
+							from the past, which was lost somewhere in
+							urbanization.
+						</p>
+						<div
+							id="srijan-events"
+							class="links-to-subsections"
+							
+						></div>
+						<!-- navigate to music events slide -->
+						<div class="to-below big-navigation-link">music</div>
+					</section>
+
+					<!-- music events section -->
+					<section class="h100w100" data-background-image="./images/bg/drama.jpg">
+						<div class="event-main-heading">
+							music
+						</div>
+						<p class="category-details-p">
+							Nukkad Natak is a form of theatrical performance and
+							presentation in outdoor public space at the top of
+							their voice with enthusiastic and energetic music.
+							Feel closer to your roots by submerging in the art
+							from the past, which was lost somewhere in
+							urbanization.
+						</p>
+						<div id="tarannum-events" class="links-to-subsections" ></div>
+						<!-- navigate to drama events slide -->
+						<div class="to-below big-navigation-link">drama</div>
 					</section>
 
 					<!-- drama events section -->
-					<section
-						id="drama-section"
-						class="page-2_1"
-						data-background-image="./images/bg/drama.jpg"
-					>
+					<section class="h100w100" data-background-image="./images/bg/drama.jpg">
 						<div class="event-main-heading">
 							drama
 						</div>
@@ -229,108 +268,191 @@
 							from the past, which was lost somewhere in
 							urbanization.
 						</p>
+						<div id="vividha-events" class="links-to-subsections" ></div>
+						<!-- navigate to automobiles events slide -->
+						<div class="to-below big-navigation-link">automobiles</div>
+					</section>
 
-						<div
-							id="drama-events"
-							class="links-to-subsections"
-							data-simplebar
-						></div>
-
-						<!-- navigate to literary events slide -->
-						<div class="to-below big-navigation-link">
-							literary
+					<!-- automobiles events section -->
+					<section class="h100w100" data-background-image="./images/bg/drama.jpg">
+						<div class="event-main-heading">
+							automobiles
 						</div>
+						<p class="category-details-p">
+							Nukkad Natak is a form of theatrical performance and
+							presentation in outdoor public space at the top of
+							their voice with enthusiastic and energetic music.
+							Feel closer to your roots by submerging in the art
+							from the past, which was lost somewhere in
+							urbanization.
+						</p>
+						<div id="sae-events" class="links-to-subsections" ></div>
+						<!-- navigate to literary events slide -->
+						<div class="to-below big-navigation-link">electrical</div>
+					</section>
+
+					<!-- electrical events section -->
+					<section class="h100w100" data-background-image="./images/bg/drama.jpg">
+						<div class="event-main-heading">
+							electrical
+						</div>
+						<p class="category-details-p">
+							Nukkad Natak is a form of theatrical performance and
+							presentation in outdoor public space at the top of
+							their voice with enthusiastic and energetic music.
+							Feel closer to your roots by submerging in the art
+							from the past, which was lost somewhere in
+							urbanization.
+						</p>
+						<div id="samarpan-events" class="links-to-subsections"></div>
+						<!-- navigate to electronics events slide -->
+						<div class="to-below big-navigation-link">electronics</div>
+					</section>
+
+					<!-- electronics events section -->
+					<section class="h100w100" data-background-image="./images/bg/drama.jpg">
+						<div class="event-main-heading">
+							electronics
+						</div>
+						<p class="category-details-p">
+							Nukkad Natak is a form of theatrical performance and
+							presentation in outdoor public space at the top of
+							their voice with enthusiastic and energetic music.
+							Feel closer to your roots by submerging in the art
+							from the past, which was lost somewhere in
+							urbanization.
+						</p>
+						<div id="microbird-events" class="links-to-subsections"></div>
+						<!-- navigate to literary events slide -->
+						<div class="to-below big-navigation-link">literary</div>
 					</section>
 
 					<!-- literary events section -->
-					<section id="literary-section">
+					<section class="h100w100" data-background-image="./images/bg/drama.jpg">
 						<div class="event-main-heading">
 							literary
 						</div>
-
 						<p class="category-details-p">
-							Lorem ipsum dolor sit amet, consectetur adipiscing
-							elit, sed do eiusmod tempor incididunt ut labore et
-							dolore magna aliqua. Ut enim ad minim veniam, quis
-							nostrud exercitation ullamco laboris nisi ut aliquip
-							ex ea commodo consequat.
+							Nukkad Natak is a form of theatrical performance and
+							presentation in outdoor public space at the top of
+							their voice with enthusiastic and energetic music.
+							Feel closer to your roots by submerging in the art
+							from the past, which was lost somewhere in
+							urbanization.
 						</p>
-
-						<!-- navigate to coding events slide -->
-						<div class="to-below big-navigation-link">
-							coding
-						</div>
+						<div id="ananya-events" class="links-to-subsections"></div>
+						<!-- navigate to photography & designing events slide -->
+						<div class="to-below big-navigation-link">photography&designing</div>
 					</section>
 
-					<!-- coding events section -->
-					<section id="coding-section">
+					<!-- photography & designing events section -->
+					<section class="h100w100" data-background-image="./images/bg/drama.jpg">
 						<div class="event-main-heading">
-							coding
+							photography &designing
 						</div>
-
 						<p class="category-details-p">
-							Lorem ipsum dolor sit amet, consectetur adipiscing
-							elit, sed do eiusmod tempor incididunt ut labore et
-							dolore magna aliqua. Ut enim ad minim veniam, quis
-							nostrud exercitation ullamco laboris nisi ut aliquip
-							ex ea commodo consequat.
+							Nukkad Natak is a form of theatrical performance and
+							presentation in outdoor public space at the top of
+							their voice with enthusiastic and energetic music.
+							Feel closer to your roots by submerging in the art
+							from the past, which was lost somewhere in
+							urbanization.
 						</p>
-
-						<div
-							id="coding-events"
-							class="links-to-subsections"
-							data-simplebar
-						></div>
-
-						<!-- navigate to dance events slide -->
-						<div class="to-below big-navigation-link">
-							dance
-						</div>
+						<div id="jhalak-events" class="links-to-subsections"></div>
+						<!-- navigate to fun events events slide -->
+						<div class="to-below big-navigation-link">fun events</div>
 					</section>
 
-					<!-- dance events section -->
-					<section id="dance-section">
+					<!-- fun events events section -->
+					<section class="h100w100" data-background-image="./images/bg/drama.jpg">
 						<div class="event-main-heading">
-							dance
+							fun events
 						</div>
-
 						<p class="category-details-p">
-							Lorem ipsum dolor sit amet, consectetur adipiscing
-							elit, sed do eiusmod tempor incididunt ut labore et
-							dolore magna aliqua. Ut enim ad minim veniam, quis
-							nostrud exercitation ullamco laboris nisi ut aliquip
-							ex ea commodo consequat.
+							Nukkad Natak is a form of theatrical performance and
+							presentation in outdoor public space at the top of
+							their voice with enthusiastic and energetic music.
+							Feel closer to your roots by submerging in the art
+							from the past, which was lost somewhere in
+							urbanization.
 						</p>
+						<div id="eklavya-events" class="links-to-subsections"></div>
+						<!-- navigate to mechanical events slide -->
+						<div class="to-below big-navigation-link">mechanical</div>
+					</section>
 
-						<div
-							id="dance-events"
-							class="links-to-subsections"
-							data-simplebar
-						></div>
+					<!-- mechanical events section -->
+					<section class="h100w100" data-background-image="./images/bg/drama.jpg">
+						<div class="event-main-heading">
+							mechanical
+						</div>
+						<p class="category-details-p">
+							Nukkad Natak is a form of theatrical performance and
+							presentation in outdoor public space at the top of
+							their voice with enthusiastic and energetic music.
+							Feel closer to your roots by submerging in the art
+							from the past, which was lost somewhere in
+							urbanization.
+						</p>
+						<div id="mechnext-events" class="links-to-subsections"></div>
+						<!-- navigate to social-cultural events slide -->
+						<div class="to-below big-navigation-link">social-cultural</div>
+					</section>
 
+					<!-- social-cultural events section -->
+					<section class="h100w100" data-background-image="./images/bg/drama.jpg">
+						<div class="event-main-heading">
+							social-cultural
+						</div>
+						<p class="category-details-p">
+							Nukkad Natak is a form of theatrical performance and
+							presentation in outdoor public space at the top of
+							their voice with enthusiastic and energetic music.
+							Feel closer to your roots by submerging in the art
+							from the past, which was lost somewhere in
+							urbanization.
+						</p>
+						<div id="vivekanand-events" class="links-to-subsections"></div>
+						<!-- navigate to technofun events slide -->
+						<div class="to-below big-navigation-link">technofun</div>
+					</section>
+
+					<!-- technofun events section -->
+					<section class="h100w100" data-background-image="./images/bg/drama.jpg">
+						<div class="event-main-heading">
+							technofun
+						</div>
+						<p class="category-details-p">
+							Nukkad Natak is a form of theatrical performance and
+							presentation in outdoor public space at the top of
+							their voice with enthusiastic and energetic music.
+							Feel closer to your roots by submerging in the art
+							from the past, which was lost somewhere in
+							urbanization.
+						</p>
+						<div id="ieee-events" class="links-to-subsections"></div>
 						<!-- navigate to starnight slide -->
-						<div
-							class="big-navigation-link"
-							onclick="Reveal.slide(2,0);"
-						>
-							starnight
-						</div>
+						<div class="big-navigation-link" onclick="Reveal.slide(2,0);">starnight</div>
 					</section>
+
+					
+
+					
 
 					<!-- event details section -->
 					<section
 						id="event-details-section"
 						data-background-image="images/bg/ec_back_2.jpg"
 					>
-						<div id="event-details-container" data-simplebar>
-							<div class="event-details-main-heading">
+						<div id="event-details-container">
+							<div id="ed-title" class="event-details-main-heading">
 								event name goes here
 							</div>
 							<h6 class="event-description-heading event-subheading">
 								Description
 							</h6>
 							
-							<p class="event-description event-details-p">
+							<p id="ed-desc" class="event-description event-details-p">
 								Lorem ipsum dolor sit amet consectetur
 								adipisicing elit. Consequatur alias obcaecati
 								sit nostrum excepturi ullam eaque, esse quisquam
@@ -339,10 +461,10 @@
 							</p>
 							
 							<h6 class="event-subheading">Event Type</h6>
-							<p class="event-details-p">Solo</p>
+							<p id="ed-event-type" class="event-details-p">Solo</p>
 
 							<h6 class="event-rules-heading event-subheading">Rules</h6>
-							<p class="event-rules-p event-details-p event-details-p">
+							<p id="ed-rules" class="event-rules-p event-details-p event-details-p">
 								1. Lorem ipsum dolor sit amet consectetur
 								adipisicing elit. lorem ipsum dolor sit. <br />
 								1. Lorem ipsum dolor sit amet consectetur
@@ -356,36 +478,34 @@
 							</p>
 
 							<h6 class="event-subheading">Date and Time</h6>
-							<p class="event-details-p">
+							<p id="ed-timing" class="event-details-p">
 								12pm (25th April, 2019) to 
 								<!-- <br> -->
 								1pm (25th April, 2019)
 							</p>
 
 							<h6 class="event-subheading">Venue</h6>
-							<p class="event-details-p">CC-08</p>
+							<p id="ed-venue" class="event-details-p">CC-08</p>
 
 							<h6 class="event-subheading">Prizes</h6>
-								<p class="event-details-p"><span class="text-white">First: </span> Rs.500 <br>
-								<span class="text-white">Second: </span> Rs.300 <br>
-								<span class="text-white">Third: </span> Rs. 100
+								<p id="ed-prizes" class="event-details-p">
+									<!-- <span class="text-white">First: </span> <span id="ed-prize-first">Rs.500</span><br>
+									<span class="text-white">Second: </span> <span id="ed-prize-second">Rs.300</span> <br>
+									<span class="text-white">Third: </span> <span id="ed-prize-third">Rs. 100</span> -->
 							</p>
 
 							<h6 class="event-subheading">Coordinators</h6>
-							<p class="event-details-p"><span class="text-white">Prince Batra</span> (9999988888)
-								<br>
-								<span class="text-white">Prince Batra</span> (9999988888)
+								<p id="ed-coordinators" class="event-details-p"><span class="text-white"><span id="coord-1-name">Prince Batra</span></span> <span id="coord-1-phone">(9999988888)</span> <br>
+								<span class="text-white"><span id="coord-2-name">Prince Batra</span></span> <span
+										id="coord-2-phone">(9999988888)</span>
 							</p>
 
-							<input type="button" value="Register" class="event-register-button">
+							<input type="button" value="Register" id="event-register-button">
 							<br><br><br>
 						</div>
-						<div class="to-right big-navigation-link">
-							next
-						</div>
+						<div class="to-right big-navigation-link">starnight</div>
 					</section>
 				</section>
-
 				<!-- starnight slide -->
 				<section>
 					<section
@@ -396,7 +516,7 @@
 							starnight
 						</div>
 						<br />
-						<div class="links-to-subsections" data-simplebar>
+						<div class="links-to-subsections">
 							<span
 								class="day-1 nav-link"
 								onclick="Reveal.slide(2,1);"
@@ -417,9 +537,7 @@
 						<div
 							class="big-navigation-link"
 							onclick="Reveal.slide(0,0);"
-						>
-							home
-						</div>
+						>home</div>
 					</section>
 
 					<!-- starnight day 1 section -->
@@ -470,9 +588,7 @@
 							by NAAC. Our University has been mandated to
 							affiliate 50+ B.Tech and B.Ed institutions.
 						</p>
-						<div class="to-right big-navigation-link">
-							Culmyca
-						</div>
+						<div class="to-right big-navigation-link">Culmyca</div>
 					</div>
 				</section>
 
@@ -510,9 +626,7 @@
 							all roads lead to just one destination: YMCA
 							University Of Science and Technology.
 						</p>
-						<div class="to-right big-navigation-link">
-							Contact
-						</div>
+						<div class="to-right big-navigation-link">Contact</div>
 					</div>
 				</section>
 
@@ -565,9 +679,7 @@
 							class="map"
 						></iframe>
 					</div>
-					<div class="to-right big-navigation-link">
-						Sponsors
-					</div>
+					<div class="to-right big-navigation-link">Sponsors</div>
 				</section>
 
 				<!-- sponsors -->
@@ -587,9 +699,7 @@
 							<img src="images/sponsors/4.png" />
 						</div>
 					</div>
-					<div class="to-right big-navigation-link">
-						Team
-					</div>
+					<div class="to-right big-navigation-link">Team</div>
 				</section>
 
 				<!-- team -->
@@ -613,9 +723,7 @@
 						<div class="sub-caption">A</div>
 					</div> --><br /><br />
 					OraganisingTEAM
-					<div class="big-navigation-link" onclick="gotoslide(0,0)">
-						Home
-					</div>
+					<div class="big-navigation-link" onclick="gotoslide(0,0)">Home</div>
 				</section>
 
 				<!-- coming soon page -->

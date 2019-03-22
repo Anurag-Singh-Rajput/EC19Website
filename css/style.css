@@ -47,6 +47,13 @@
 /*=============================================
 =            global            =
 =============================================*/
+.hidden-id {
+	display: none;
+}
+.event-link {
+	cursor: pointer;
+}
+
 .text-white {
 	color: white !important;
 }
@@ -764,7 +771,7 @@ section {
 	margin-bottom: 24px !important;
 }
 
-.event-register-button {
+#event-register-button {
 	color: white;
 	font-size: 20px;
 	float: left;
@@ -784,7 +791,7 @@ section {
 		text-align: left !important;
 	}
 
-	.event-register-button {
+	#event-register-button {
 		font-size: 44px;
 		padding: 16px 60px;
 		border-radius: 35px;
@@ -807,6 +814,7 @@ section {
 	font-size: 140px !important;
 	font-family: HiraKakuStd-W8 !important;
 	text-align: left !important;
+	line-height: 150px !important;
 }
 
 /*=====  End of Drama page  ======*/
@@ -825,6 +833,7 @@ section {
 #event-details-container {
 	height: calc(80vh) !important;
 	width: 100%;
+	position: relative;
 	overflow-y: auto;
 	overflow-x: hidden;
 }
@@ -933,7 +942,7 @@ section {
 #registeration-form select {
 	color: #bbbbbb;
 }
-.registeration-register-button {
+#registeration-register-button {
 	color: white;
 	font-size: 24px;
 	padding: 14px 120px !important;
@@ -943,7 +952,7 @@ section {
 	background-color: rgba(255, 255, 255, 0.3);
 	border: 2px solid transparent !important;
 }
-.registeration-register-button:hover {
+#registeration-register-button:hover {
 	color: var(--orange) !important;
 	font-weight: bold;
 	cursor: pointer;
