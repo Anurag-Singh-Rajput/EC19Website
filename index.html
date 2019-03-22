@@ -34,7 +34,7 @@
 
 		<!-- Pre-Loader -->
 
-	<!-- <div class="loading"><span class="bla">Loading <span class="count">0</span></span></div>
+	<div class="loading"><span class="bla">Loading <span class="count">0</span></span></div>
 	<div class="loader">
 		<hr class="line-1"><br>
 		<span class="ec">Welcome</span>
@@ -44,7 +44,7 @@
 	<div class="preloader-top"> 
 		<hr class="line-x">
 	</div>
-	<div class="preloader-bottom"></div> -->
+	<div class="preloader-bottom"></div>
 
 		<!-- The nav bar -->
 		<div class="nav">
@@ -646,7 +646,6 @@
 		<script src="./js/script.js"></script>
 	</body>
 	<script>
-		/*
 		function myFunction(){
 
 		var y = $(window).width();
@@ -800,6 +799,13 @@
 		  var x = $(window).width();
 		  if (x < 600){
 
+		$('.line-1').css('width', '0%');
+		$('.line-1').css('width', '60%');
+		$('.line-2').css('width', '0%');
+		$('.line-2').css('width', '60%');
+		$('.preloader-top').css('animation-delay', '5.8s');
+		$('.preloader-bottom').css('animation-delay', '5.8s');
+
 			  	$('.line-1')
 			  .delay(800)
 			  .queue(function (next) { 
@@ -857,14 +863,14 @@
 			    next(); 
 			  });
 
-			  // $('.ec')
-			  // .delay()
-			  // .queue(function (next) { 
-			  //   $(this).css({
-			  //   	display: 'none'
-			  //   }); 
-			  //   next(); 
-			  // });
+			  $('.ec')
+			  .delay(100)
+			  .queue(function (next) { 
+			    $(this).css({
+			    	display: 'none'
+			    }); 
+			    next(); 
+			  });
 
 			$('.line-1')
 			  .delay(800)
@@ -885,7 +891,7 @@
 			  });
 
 			  $('.ec-x')
-			  .delay(1800)
+			  .delay(1850)
 			  .queue(function (next) { 
 			    $(this).css({
 			    	visibility: 'visible',
@@ -937,6 +943,6 @@
 			  });
 
 		  }
-	} */
+	}
 	</script>
 </html>
