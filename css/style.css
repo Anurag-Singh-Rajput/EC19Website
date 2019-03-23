@@ -237,10 +237,6 @@ section {
 	cursor: pointer;
 }
 
-.ps__thumb-x{
-	top: -130px !important;
-}
-
 /*Team page*/
 
 .team {
@@ -332,6 +328,9 @@ section {
 }
 
 @media screen and (max-width: 600px) {
+	.ps__thumb-x {
+		top: -130px !important;
+	}
 	.address {
 		display: block;
 		float: none;
