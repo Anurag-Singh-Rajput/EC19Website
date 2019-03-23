@@ -12,11 +12,11 @@ $.preload(images,{
     if (x1 == images.length)
     {
      setTimeout(function(){
-      $(".loading").fadeOut(1000);
+      $(".loading").fadeOut('slow');
       setTimeout(function(){
         myFunction();
       },1200)
-      $(".bla").fadeOut(1000);
+      $(".bla").fadeOut('slow');
      },500)
     };
 

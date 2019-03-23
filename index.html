@@ -946,7 +946,7 @@
 			  .delay(800)
 			  .queue(function (next) { 
 			    $(this).css({
-			    	transform: 'translate(0px, 60px)'
+			    	transform: 'translate(0px, 50px)'
 			    }); 
 			    next(); 
 			  });
@@ -964,27 +964,28 @@
 			  .delay(800)
 			  .queue(function (next) { 
 			    $(this).css({
-			    	visibility: 'visible',
+			 		visibility: 'hidden',
 			    	opacity: '0',
-			    	transition: '0s'
-			    }); 
-			    next(); 
-			  });
-
-			  $('.ec')
-			  .delay(100)
-			  .queue(function (next) { 
-			    $(this).css({
+			    	transition: '.5s',
 			    	display: 'none'
 			    }); 
 			    next(); 
 			  });
 
+			  // $('.ec')
+			  // .delay(100)
+			  // .queue(function (next) { 
+			  //   $(this).css({
+			  //   	display: 'none'
+			  //   }); 
+			  //   next(); 
+			  // });
+
 			$('.line-1')
 			  .delay(800)
 			  .queue(function (next) { 
 			    $(this).css({
-			    	transform: 'translate(0px, 26px)'
+			    	transform: 'translate(0px, 16px)'
 			    }); 
 			    next(); 
 			  });
@@ -1011,10 +1012,10 @@
 			  });
 
 			  $('.ec-x')
-			  .delay(600)
+			  .delay(550)
 			  .queue(function (next) { 
 			    $(this).css({
-			    	visibility: 'visible',
+			    	visibility: 'hidden',
 			    	opacity: '0',
 			    	transition: '.2s'
 			    }); 

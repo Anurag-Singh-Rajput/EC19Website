@@ -150,7 +150,7 @@
 	background-color: white;
 	border: 1px solid white;
 	width: 0%;
-	margin-top: 0.5%;
+	margin-top: 8px;
 	transition: 0.3s;
 	transform: translate(0px, -80px);
 }
@@ -1008,15 +1008,17 @@ section {
 
 	.ec-x {
 		font-size: 30px;
+		line-height: 0px;
 	}
 
 	.line-1 {
-		margin-top: 300px;
-		transform: translate(0px, 0px);
+		margin-top: 280px;
+		transform: translate(0px, 20px);
 	}
 
 	.line-2 {
-		transform: translate(0px, -49px);
+		transform: translate(0px, -29px);
+		margin-top: 0px;
 	}
 
 	.line-x {
@@ -1027,6 +1029,10 @@ section {
 		padding-top: 280px;
 		font-size: 40px;
 		/*display: none;*/
+	}
+
+	.loader {
+		/*padding-top: 200px;*/
 	}
 
 	/*----------  next section  ----------*/
