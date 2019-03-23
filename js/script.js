@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				left: 300,
 				top: 0
 			});
-			setTimeout(function(){
+			setTimeout(function() {
 				container.scrollTo({
 					behavior: "smooth",
 					left: -300,
@@ -69,6 +69,12 @@ function gotoslide(x, y) {
 	navbar.style.backgroundColor = "transparent";
 }
 
+var selectEvents = [];
+function EventObject(id, title) {
+	this.id = id;
+	this.title = title;
+}
+
 function fetchEventNames() {
 	$.ajax({
 		url: "http://culmyca19.herokuapp.com/eventname",
@@ -78,6 +84,21 @@ function fetchEventNames() {
 			console.log(data);
 			console.log("fetched events title data");
 			data.forEach(function(eventData) {
+				if (
+					eventData.eventtype !== "NA" ||
+					eventData.eventtype !== ""
+				) {
+					$("#events-list").append(
+						'<option value="' +
+							eventData._id +
+							'"">' +
+							eventData.title +
+							"</option>"
+					);
+					selectEvents.push(
+						new EventObject(eventData._id, eventData.title)
+					);
+				}
 				var eventsNameContainer = $(
 					"#" + eventData.clubname.toLowerCase() + "-events"
 				);
@@ -111,9 +132,6 @@ function clipBigNavLink() {
 	var links = $(".big-navigation-link");
 	links.each(function() {
 		var innerText = $(this).text();
-		console.log(
-			"changing " + innerText + " to " + innerText.substring(0, 7)
-		);
 		$(this).text(innerText.substring(0, 7));
 	});
 }
@@ -136,7 +154,7 @@ function addOnClickListenerToEventLinks() {
 					console.log(eventData);
 					// get reference to html elements
 					var title = document.getElementById("ed-title");
-
+					var id = document.getElementById("ed-id");
 					var desc = document.getElementById("ed-desc");
 					var eventType = document.getElementById("ed-event-type");
 					var rules = document.getElementById("ed-rules");
@@ -160,6 +178,7 @@ function addOnClickListenerToEventLinks() {
 						.substring(0, 24);
 
 					// set values
+					id.textContent = eventData._id;
 					title.textContent = eventData.title;
 					desc.textContent = eventData.desc;
 					eventType.textContent = eventData.eventtype;
@@ -231,4 +250,36 @@ function addOnClickListenerToEventLinks() {
 				.always(function() {});
 		});
 	});
+}
+
+function goToRegister() {
+	Reveal.slide(0, 2);
+
+	// get id of current event
+	var eventId = document.getElementById("ed-id").textContent;
+	var eventTitle = document.getElementById("ed-title".textContent);
+	// search id of current event in selectEvents
+	// var index = selectEvents.indexOf(new EventObject(eventId, eventTitle)) + 1;
+	var eventIndex = -1;
+	for (var i = 0, l = selectEvents.length; i < l; ++i) {
+		if (selectEvents[i].id == eventId) {
+			eventIndex = i + 1;
+			break;
+		}
+	}
+
+	// set event index in select input
+	if (eventIndex != -1) {
+		document.getElementById("events-list").selectedIndex = eventIndex;
+	}
+}
+
+function hideNavbar() {
+	if (window.innerWidth < 600) {
+		document.getElementById("navbar").style.display = "none";
+	}
+}
+
+function showNavbar() {
+	document.getElementById("navbar").style.display = "block";
 }

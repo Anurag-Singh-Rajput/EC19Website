@@ -49,7 +49,7 @@
 	<div class="preloader-bottom"></div>
 
 		<!-- The nav bar -->
-		<div class="nav">
+		<div class="nav" id="navbar">
 			<span class="navbar-left" id="jcboselogo">
 				<a href="http://www.ymcaust.ac.in"><img src="./images/jcbose.png" alt="J C Bose Golden Jublee Logo" height="50px"></a>
 			</span>
@@ -138,21 +138,22 @@
 					<section>
 						<div id="registeration-form-container" >
 							<form id="registeration-form" action="return false;">
-								<input type="text" size="35" placeholder="Full Name" />
+								<input type="text" size="35" placeholder="Full Name" onfocus="hideNavbar()" onfocusout="showNavbar()" required />
 								<br />
-								<input type="email" size="35" placeholder="Email" />
+								<input type="email" size="35" placeholder="Email" onfocus="hideNavbar()" onfocusout="showNavbar()" required />
 								<br />
-								<input type="text" size="35" placeholder="Phone Number" />
+								<input type="text" size="35" placeholder="Phone Number (10 digit)" onfocus="hideNavbar()" onfocusout="showNavbar()" required />
 								<br />
-								<input type="text" size="35" placeholder="College Name" />
+								<input type="text" size="35" placeholder="College Name" required />
 								<br />
-								<select name="" id="">
+								<select name="" id="events-list">
 									<option value="">Select</option>
 								</select>
 								<input type="button" value="Register" id="registeration-register-button">
 							</form>
 						</div>
-						<div id="register-right"></div>
+						<!-- navigate to events -->
+						<div class="to-right big-navigation-link">events</div>
 					</section>
 				</section>
 
@@ -448,6 +449,7 @@
 							<div id="ed-title" class="event-details-main-heading">
 								event name goes here
 							</div>
+							<div id="ed-id" style="display: none;"></div>
 							<h6 class="event-description-heading event-subheading">
 								Description
 							</h6>
@@ -500,7 +502,7 @@
 										id="coord-2-phone">(9999988888)</span>
 							</p>
 
-							<input type="button" value="Register" id="event-register-button">
+							<input type="button" value="Register" onclick="goToRegister()" id="event-register-button">
 							<br><br><br>
 						</div>
 						<div class="to-right big-navigation-link">starnight</div>
