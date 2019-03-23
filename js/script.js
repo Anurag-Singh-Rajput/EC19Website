@@ -37,6 +37,29 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	// ps.update();
 
 	clipBigNavLink();
+
+	Reveal.addEventListener("slidechanged", function(event) {
+		console.log(event.currentSlide.querySelector(".links-to-subsections"));
+		var container = event.currentSlide.querySelector(
+			".links-to-subsections"
+		);
+		if (container) {
+			setTimeout(() => container.classList.add("ps--focus"), 0);
+			setTimeout(() => container.classList.remove("ps--focus"), 750);
+			container.scrollTo({
+				behavior: "smooth",
+				left: 300,
+				top: 0
+			});
+			setTimeout(function(){
+				container.scrollTo({
+					behavior: "smooth",
+					left: -300,
+					top: 0
+				});
+			}, 500);
+		}
+	});
 });
 
 function gotoslide(x, y) {

@@ -237,6 +237,10 @@ section {
 	cursor: pointer;
 }
 
+.ps__thumb-x{
+	top: -130px !important;
+}
+
 /*Team page*/
 
 .team {
