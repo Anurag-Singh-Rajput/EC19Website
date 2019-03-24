@@ -32,14 +32,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	);
 
 	const container = document.querySelector("#event-details-container");
-	var ps = new PerfectScrollbar(container);
+	new PerfectScrollbar(container);
+	new PerfectScrollbar(
+		document.getElementById("registeration-form-container")
+	);
+
 	fetchEventNames();
 	// ps.update();
 
 	clipBigNavLink();
 
 	Reveal.addEventListener("slidechanged", function(event) {
-		console.log(event.currentSlide.querySelector(".links-to-subsections"));
 		var container = event.currentSlide.querySelector(
 			".links-to-subsections"
 		);
@@ -126,6 +129,14 @@ function fetchEventNames() {
 			console.log("finished adding event titles");
 			addOnClickListenerToEventLinks();
 		});
+}
+
+function clipBigNavLink() {
+	var links = $(".big-navigation-link");
+	links.each(function() {
+		var innerText = $(this).text();
+		$(this).text(innerText.substring(0, 7));
+	});
 }
 
 function clipBigNavLink() {
@@ -257,9 +268,19 @@ function goToRegister() {
 
 	// get id of current event
 	var eventId = document.getElementById("ed-id").textContent;
-	var eventTitle = document.getElementById("ed-title".textContent);
+	var eventTitle = document.getElementById("ed-title").textContent;
+	var eventType = document.getElementById("ed-event-type").textContent;
+	// hide team size select input if event type is solo else show
+	if (eventType.toLowerCase() === "solo") {
+		console.log(eventType + "event");
+		$("#teamMembersInputFormContainer").html("");
+		document.getElementById("teamsize-select").style.display = "none";
+	} else {
+		console.log(eventType + "event");
+		$("#teamMembersInputFormContainer").html("");
+		document.getElementById("teamsize-select").style.display = "block";
+	}
 	// search id of current event in selectEvents
-	// var index = selectEvents.indexOf(new EventObject(eventId, eventTitle)) + 1;
 	var eventIndex = -1;
 	for (var i = 0, l = selectEvents.length; i < l; ++i) {
 		if (selectEvents[i].id == eventId) {
@@ -267,7 +288,6 @@ function goToRegister() {
 			break;
 		}
 	}
-
 	// set event index in select input
 	if (eventIndex != -1) {
 		document.getElementById("events-list").selectedIndex = eventIndex;
@@ -282,4 +302,86 @@ function hideNavbar() {
 
 function showNavbar() {
 	document.getElementById("navbar").style.display = "block";
+}
+
+function registerForEvent() {
+	var regForm = document.getElementById("registeration-form");
+	var name = regForm["name"].value;
+	var phone = Number(regForm["phone"].value);
+	var email = regForm["email"].value;
+	var college = regForm["college"].value;
+	var eventid = regForm["event"].value;
+	var eventname =
+		regForm["event"].options[regForm["event"].selectedIndex].textContent;
+	var timestamp = Date.now();
+	var team = [];
+
+	if (document.getElementById("teamsize-select").style.display !== "none") {
+		var teamSize = Number(document.getElementById("teamsize-select").value);
+		for (var i = 0; i < teamSize - 1; i++) {
+			var teammateName = regForm["name" + (i + 2)].value;
+			var teammateEmail = regForm["email" + (i + 2)].value;
+			team.push({
+				name: teammateName,
+				email: teammateEmail
+			});
+		}
+	}
+
+	data = {
+		name: name,
+		phone: phone,
+		email: email,
+		college: college,
+		eventid: eventid,
+		eventname: eventname,
+		timestamp: timestamp,
+		team: team
+	};
+
+	$.ajax({
+		url: "https://cylmyca19.herokuapp.com/register",
+		type: "POST",
+		data: data
+	})
+		.done(function(response) {
+			console.log(response);
+		})
+		.fail(function(response) {
+			console.log(response);
+		})
+		.always(function(response) {
+			var regMsg = (document.getElementById(
+				"registeration-msg"
+			).textContent = "you may have been registered or maybe not.");
+		});
+
+	console.log(name);
+	console.log(phone);
+	console.log(email);
+	console.log(college);
+	console.log(timestamp);
+	console.log(eventname);
+	console.log(eventid);
+	console.log(team);
+}
+
+function handleTeamMembersInputFields() {
+	document.getElementById("teamsize-select").style.display = "block";
+	var size = Number(document.getElementById("teamsize-select").value);
+	var teamMembersInputFormContainer = $("#teamMembersInputFormContainer");
+	teamMembersInputFormContainer.html("");
+
+	for (var i = 0; i < size - 1; ++i) {
+		teamMembersInputFormContainer.append(
+			`<input type="text" name="name${i +
+				2}" size="35" placeholder="Name (Member ${i +
+				2})" onfocus="hideNavbar()" onfocusout="showNavbar()" required />
+			<br />
+			<input type="email" name="email${i +
+				2}" size="35" placeholder="Email (Member ${i +
+				2})" onfocus="hideNavbar()" onfocusout="showNavbar()" required />
+			<br /><br />`
+		);
+	}
 }

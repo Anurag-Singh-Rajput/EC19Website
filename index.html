@@ -136,21 +136,37 @@
 					</section>
 
 					<!-- register section -->
-					<section>
-						<div id="registeration-form-container" >
+					<section id="registeration-section">
+						<div id="registeration-form-container">
 							<form id="registeration-form" action="return false;">
-								<input type="text" size="35" placeholder="Full Name" onfocus="hideNavbar()" onfocusout="showNavbar()" required />
+								<input type="text" name="name" size="35" placeholder="Full Name" onfocus="hideNavbar()" onfocusout="showNavbar()" required />
 								<br />
-								<input type="email" size="35" placeholder="Email" onfocus="hideNavbar()" onfocusout="showNavbar()" required />
+								<input type="email" name="email" size="35" placeholder="Email" onfocus="hideNavbar()" onfocusout="showNavbar()" required />
 								<br />
-								<input type="text" size="35" placeholder="Phone Number (10 digit)" onfocus="hideNavbar()" onfocusout="showNavbar()" required />
+								<input type="text" minlength="10" maxlength="10" name="phone" size="35" placeholder="Phone Number (10 digit)" onfocus="hideNavbar()" onfocusout="showNavbar()" required />
 								<br />
-								<input type="text" size="35" placeholder="College Name" required />
+								<input type="text" name="college" size="35" placeholder="College Name" required />
 								<br />
-								<select name="" id="events-list">
-									<option value="">Select</option>
+								<select name="event" id="events-list">
+									<option disabled>Select Event</option>
 								</select>
-								<input type="button" value="Register" id="registeration-register-button">
+								<!-- <br>
+								<input type="number" name="teamsize" min="1" max="10" id="teamsize-input" placeholder="4" onchange="handleTeamMembersInputFields()"> -->
+								<select name="teamsize" id="teamsize-select" oninput="handleTeamMembersInputFields();">
+									<option value="0">Select Team Size</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+								</select>
+								<div id="teamMembersInputFormContainer">
+								</div>
+								<input type="button" value="Register" id="registeration-register-button" onclick="registerForEvent();">
+								<br>
+								<p id="registeration-msg"></p>
+								<br>
+								<br>
+								<br>
 							</form>
 						</div>
 						<!-- navigate to events -->

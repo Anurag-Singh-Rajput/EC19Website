@@ -836,7 +836,8 @@ section {
 	line-height: 90px !important;
 }
 
-#event-details-container {
+#event-details-container,
+#registeration-form-container {
 	height: calc(80vh) !important;
 	width: 100%;
 	position: relative;
@@ -847,6 +848,10 @@ section {
 #event-details-section {
 	padding-top: 10%;
 	padding-bottom: 200px;
+	width: 100%;
+}
+#registeration-section {
+	padding-top: 10%;
 	width: 100%;
 }
 .event-subheading {
@@ -968,13 +973,21 @@ section {
 #registeration-form option {
 	font-size: 16px !important;
 }
-#events-list {
-	min-width: 500px;
-	max-width: 500px;
+#events-list,
+#teamsize-select {
+	min-width: 505px;
+	max-width: 505px;
 	display: block;
 	left: 50%;
 	position: relative;
+	margin: 12px 0 24px 0 !important;
 	transform: translateX(-50%);
+}
+textarea,
+select,
+input,
+button {
+	outline: none;
 }
 
 @media screen and (max-width: 600px) {
@@ -1000,7 +1013,8 @@ section {
 		border: 2px solid transparent !important;
 		float: left;
 	}
-	#events-list {
+	#events-list,
+	#teamsize-select {
 		min-width: 300px;
 		max-width: 500px;
 		left: 0;
