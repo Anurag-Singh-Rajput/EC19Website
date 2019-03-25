@@ -352,9 +352,21 @@ function registerForEvent() {
 			console.log(response);
 		})
 		.always(function(response) {
-			var regMsg = (document.getElementById(
-				"registeration-msg"
-			).textContent = "you may have been registered or maybe not.");
+			if (
+				response.status === "success" ||
+				response.status === "Success" ||
+				response.Status === "success" ||
+				response.Status === "Success"
+			) {
+				document.getElementById("registeration-msg").textContent =
+					"You have been registered";
+			} else if (response.status === "Already Registered") {
+				document.getElementById("registeration-msg").textContent =
+					"You are already registered.";
+			} else {
+				document.getElementById("registeration-msg").textContent =
+					"Failed to register.";
+			}
 		});
 
 	console.log(name);
