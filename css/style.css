@@ -240,19 +240,51 @@ section {
 /*Team page*/
 
 .team {
-	font-size: 64px !important;
-	letter-spacing: 5px;
+	letter-spacing: 2px;
 	text-align: center;
 }
 
-.team-container {
-	height: 160px;
-	width: 160px;
+.team-img-container {
+	display: inline-block !important;
+	padding: 0 20px !important;
+	margin-bottom: 20px !important;
+}
+
+.team-img {
+	height: 140px;
+	width: 140px;
 	border-radius: 50%;
 	display: inline-block;
+	border: 2px solid rgb(231, 141, 33) !important;
+}
+.team-img-title,
+.team-img-description {
+	display: block;
+	font-family: "Raleway", sans-serif !important;
+	text-align: center;
+}
+.team-img-title {
+	font-size: 18px !important;
+}
+.team-img-description {
+	font-size: 14px !important;
+}
 
-	border: 4px solid rgb(231, 141, 33) !important;
-	margin-left: 4% !important;
+@media screen and (max-width: 600px) {
+	.team-img-container {
+		margin-bottom: 100px !important;
+	}
+	.team-img {
+		height: 280px;
+		width: 280px;
+		border-radius: 50%;
+	}
+	.team-img-title {
+		font-size: 42px !important;
+	}
+	.team-img-description {
+		font-size: 32px !important;
+	}
 }
 
 /*Team Page Ends*/
@@ -275,7 +307,7 @@ section {
 /*Contact page*/
 .contact-container {
 	margin-left: -60px !important;
-	margin-top: -80px !important;
+	margin-top: -20px !important;
 	width: 95%;
 }
 
@@ -344,9 +376,10 @@ section {
 		font-size: 12px;
 	}
 	.contact-container {
-		margin-top: -350px !important;
+		margin-top: -290px !important;
 		width: 96% !important;
 		margin-left: 0px !important;
+		margin-bottom: 40px !important;
 	}
 	.map {
 		margin-top: 150px !important;
@@ -837,6 +870,7 @@ section {
 }
 
 #event-details-container,
+#team-container,
 #registeration-form-container {
 	height: calc(80vh) !important;
 	width: 100%;
@@ -845,8 +879,9 @@ section {
 	overflow-x: hidden;
 }
 
-#event-details-section {
-	padding-top: 10%;
+#event-details-section,
+#team-container {
+	margin-top: 10%;
 	padding-bottom: 200px;
 	width: 100%;
 }
@@ -867,11 +902,13 @@ section {
 }
 
 @media screen and (max-width: 600px) {
-	#event-details-section {
+	#event-details-section,
+	#team-container {
 		padding-top: 0 !important;
 		margin-top: -20% !important;
 	}
-	#event-details-container {
+	#event-details-container,
+	#team-container {
 		height: 135vh !important;
 	}
 	.event-description-heading,
