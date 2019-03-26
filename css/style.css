@@ -306,7 +306,7 @@ section {
 
 /*Contact page*/
 .contact-container {
-	margin-left: -60px !important;
+	margin-left: 0px !important;
 	margin-top: -20px !important;
 	width: 95%;
 }
@@ -647,7 +647,7 @@ section {
 	position: absolute !important;
 	font-size: 120px !important;
 	top: calc(25vh) !important;
-	right: calc(-55vh) !important;
+	right: calc(-65vh) !important;
 	color: #bbbbbb !important;
 	font-family: HiraKakuStdN-W8;
 	clear: none;
