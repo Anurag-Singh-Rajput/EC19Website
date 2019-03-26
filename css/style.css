@@ -166,7 +166,9 @@
 
 .ec-x {
 	font-size: 100px;
-	color: white;
+	background: -webkit-linear-gradient(red, white, green);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 	visibility: hidden;
 	opacity: 0;
 	transition: visibility 0s, opacity 0.5s linear;
@@ -1109,6 +1111,7 @@ button {
 	.ec-x {
 		font-size: 30px;
 		line-height: 0px;
+    	color: white!important;
 	}
 
 	.line-1 {
