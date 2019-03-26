@@ -27,9 +27,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 	Array.from(document.querySelectorAll(".links-to-subsections")).forEach(
 		function(container) {
-			new PerfectScrollbar(container, {
-				includePadding: true
-			});
+			new PerfectScrollbar(container);
 		}
 	);
 
