@@ -167,8 +167,8 @@
 .ec-x {
 	font-size: 100px;
 	background: -webkit-linear-gradient(red, white, green);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 	visibility: hidden;
 	opacity: 0;
 	transition: visibility 0s, opacity 0.5s linear;
@@ -206,6 +206,7 @@ section {
 }
 
 .links-to-subsections {
+	position: relative;
 	text-align: left !important;
 	padding-top: 28px !important;
 	padding-bottom: 28px !important;
@@ -455,20 +456,8 @@ section {
 		transform: translateX(-5px);
 	}
 }
-/* right bounce */
-
-/* assign bounce */
-.links-to-subsections::before {
-	-webkit-animation: bounceRight 2s infinite;
-	animation: bounceRight 2s infinite;
-	float: right;
-}
 
 @media only screen and (max-width: 600px) {
-	.links-to-subsections::before {
-		height: 40px;
-		width: 40px;
-	}
 	.nav-link {
 		font-size: 48px !important;
 	}
@@ -777,6 +766,16 @@ section {
 	font-family: HiraKakuStd-W8 !important;
 	line-height: 100px !important;
 }
+.culmyca-subheading {
+	font-size: 28px !important;
+	float: left;
+}
+
+@media screen and (max-width: 600px) {
+	.culmyca-subheading {
+		font-size: 36px !important;
+	}
+}
 
 /*=====  End of EC-19 - Homepage  ======*/
 
@@ -856,6 +855,12 @@ section {
 	font-family: HiraKakuStd-W8 !important;
 	text-align: left !important;
 	line-height: 150px !important;
+}
+
+@media screen and (max-width: 600px) {
+	.event-main-heading {
+		font-size: 120px !important;
+	}
 }
 
 /*=====  End of Drama page  ======*/
@@ -1111,7 +1116,7 @@ button {
 	.ec-x {
 		font-size: 30px;
 		line-height: 0px;
-    	color: white!important;
+		color: white !important;
 	}
 
 	.line-1 {

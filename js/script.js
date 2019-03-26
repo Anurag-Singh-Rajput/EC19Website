@@ -27,7 +27,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 	Array.from(document.querySelectorAll(".links-to-subsections")).forEach(
 		function(container) {
-			new PerfectScrollbar(container);
+			new PerfectScrollbar(container, {
+				includePadding: true
+			});
 		}
 	);
 
@@ -191,15 +193,15 @@ function addOnClickListenerToEventLinks() {
 
 					// set values
 					id.textContent = eventData._id;
-					title.textContent = eventData.title;
-					desc.textContent = eventData.desc;
-					eventType.textContent = eventData.eventtype;
-					rules.textContent = eventData.rules;
+					title.textContent = eventData.title.toLowerCase();
+					desc.textContent = eventData.desc.toLowerCase();
+					eventType.textContent = eventData.eventtype.toLowerCase();
+					rules.textContent = eventData.rules.toLowerCase();
 					if (eventData.rules == "") {
 						rules.textContent = "NA";
 					}
 					timing.textContent = timeFrom + " to " + timeTo;
-					venue.textContent = eventData.venue;
+					venue.textContent = eventData.venue.toLowerCase();
 
 					var prizesInnerHTML = "";
 					if (
