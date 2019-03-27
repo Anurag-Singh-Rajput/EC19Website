@@ -67,7 +67,7 @@
 }
 
 .loading {
-	background-color:	#F0F0F0;
+	background-color: #f0f0f0;
 	height: 100%;
 	width: 100%;
 	text-align: center;
@@ -91,7 +91,7 @@
 	position: fixed;
 	height: 100%;
 	width: 100%;
-	background-color:	#F0F0F0;
+	background-color: #f0f0f0;
 	z-index: +1000 !important;
 	overflow: hidden;
 	text-align: center;
@@ -102,7 +102,7 @@
 	height: 50%;
 	width: 100%;
 	z-index: 10;
-	background-color:	#F0F0F0;
+	background-color: #f0f0f0;
 	bottom: 0px;
 	animation: right 1s cubic-bezier(0.37, 1.11, 0.21, 0.75);
 	animation-fill-mode: forwards;
@@ -114,7 +114,7 @@
 	height: 50%;
 	width: 100%;
 	z-index: 10;
-	background-color:	#F0F0F0;
+	background-color: #f0f0f0;
 	transition: 0.5s;
 	animation: left 1s cubic-bezier(0.37, 1.11, 0.21, 0.75);
 	animation-fill-mode: forwards;
@@ -169,7 +169,7 @@
 .ec-x {
 	font-size: 100px;
 	color: black;
-/*	background: -webkit-linear-gradient(red, white, green);
+	/*	background: -webkit-linear-gradient(red, white, green);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;*/
 	visibility: hidden;
@@ -180,13 +180,13 @@
 	font-family: "Raleway", sans-serif;
 	/*font-family: 'Baloo Tamma', cursive;*/
 	/*-webkit-text-stroke: 1px black;*/
-/*	text-shadow: -1px -1px 0px $clr-blue,
+	/*	text-shadow: -1px -1px 0px $clr-blue,
     3px 3px 0px $clr-blue,
     6px 6px 0px $clr-blue-900;*/
 }
 
 .elements-loader {
-	color: red!important;
+	color: red !important;
 }
 
 @keyframes left {
@@ -823,14 +823,17 @@
 	line-height: 100px !important;
 }
 .culmyca-subheading {
-	font-family: HiraKakuStd-W8 !important;
-	font-size: 20px !important;
+	padding-top: 12px !important;
+	font-weight: 600;
+	font-family: "geomanistlight" !important;
+	font-size: 24px !important;
+	letter-spacing: 2px;
 	float: left;
 }
 
 @media screen and (max-width: 600px) {
 	.culmyca-subheading {
-		font-size: 30px !important;
+		font-size: 32px !important;
 	}
 }
 
