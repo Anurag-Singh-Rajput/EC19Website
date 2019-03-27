@@ -23,7 +23,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		}
 	});
 
-	new Siema();
+	// try {
+	// 	new Siema();
+	// 	mySiema.resizeHandler();
+	// } catch (err) {
+	// 	console.log(err.message);
+	// }
 
 	Array.from(document.querySelectorAll(".links-to-subsections")).forEach(
 		function(container) {
@@ -63,6 +68,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				});
 			}, 500);
 		}
+	});
+
+	$(document).ready(function() {
+		$(".owl-carousel").owlCarousel({
+			nav: true,
+			navText: [
+				"<img src='./images/icons/left-arrow.svg' id='owl-nav-left-arrow' />",
+				"<img src='./images/icons/right-arrow.svg' id='owl-nav-right-arrow' />"
+			],
+			items: 1,
+			loop: true,
+			mouseDrag: true,
+			touchDrag: true,
+			lazyLoad: true,
+			dots: true,
+			autoplay: 3000,
+			center: true
+		});
 	});
 });
 

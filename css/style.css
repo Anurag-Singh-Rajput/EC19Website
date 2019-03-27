@@ -196,8 +196,16 @@
 
 /*Preloader ends*/
 
-section {
-	margin-left: calc(-5vw) !important;
+#home-section,
+#registeration-section,
+#events-section,
+#starnight-section,
+.about-section,
+#sponsors-section {
+	margin-left: calc(-10vw) !important;
+}
+#contact-section {
+	margin-left: calc(-2vw) !important;
 }
 
 /* for smooth animation between slides */
@@ -310,12 +318,12 @@ section {
 /*Contact page*/
 .contact-container {
 	margin-left: 0px !important;
-	margin-top: -20px !important;
+	margin-top: 20px !important;
 	width: 95%;
 }
 
 .ymca {
-	border: 2px solid rgb(231, 141, 33) !important;
+	border-bottom: 2px solid white !important;
 }
 
 .ymca h1 {
@@ -331,7 +339,6 @@ section {
 
 .map {
 	border: 2px solid rgb(231, 141, 33) !important;
-	float: right;
 	display: inline-block;
 }
 
@@ -347,19 +354,20 @@ section {
 
 .address {
 	display: inline-block;
-	float: left;
 	text-align: left;
 }
 
 .address h5 {
 	margin: 0px;
 	font-size: 16px;
+	text-transform: capitalize !important;
 }
 
 .address h4 {
 	margin: 0px;
 	font-size: 24px;
 	text-decoration: underline;
+	text-transform: capitalize !important;
 }
 
 @media screen and (max-width: 600px) {
@@ -628,6 +636,42 @@ section {
 	transform: translate(-50%, -50%);
 }
 
+.owl-carousel {
+	position: relative;
+	left: 50%;
+	transform: translate(-50%, 5%);
+}
+.owl-nav {
+	position: absolute;
+	bottom: 100px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.owl-nav .owl-prev,
+.owl-nav .owl-next {
+	margin: 0 12px !important;
+}
+#owl-nav-left-arrow,
+#owl-nav-right-arrow {
+	height: 24px;
+	border: none !important;
+	background: none !important;
+	outline: none !important;
+}
+
+@media screen and (max-width: 600px) {
+	#gallery-section {
+		margin-left: 0 !important;
+	}
+	.owl-nav {
+		bottom: -50px;
+		border-radius: 10px !important;
+	}
+	#owl-nav-left-arrow,
+	#owl-nav-right-arrow {
+		height: 48px;
+	}
+}
 /*=====  gallery - End of carousel for image gallery  ======*/
 
 /*=============================================
@@ -767,13 +811,14 @@ section {
 	line-height: 100px !important;
 }
 .culmyca-subheading {
-	font-size: 28px !important;
+	font-family: HiraKakuStd-W8 !important;
+	font-size: 20px !important;
 	float: left;
 }
 
 @media screen and (max-width: 600px) {
 	.culmyca-subheading {
-		font-size: 36px !important;
+		font-size: 30px !important;
 	}
 }
 

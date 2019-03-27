@@ -13,9 +13,11 @@
 
 		<link rel="stylesheet" href="./css/reveal.css" />
 		<link rel="stylesheet" href="./css/theme/black.css" />
-		<link rel="stylesheet" href="./css/style.css" />
 		<link rel="stylesheet" href="./css/cursor.css" />
 		<link rel="stylesheet" href="./css/perfect-scrollbar.css">
+		<link rel="stylesheet" href="./css/owlcarousel/owl.carousel.min.css">
+		<link rel="stylesheet" href="./css/owlcarousel/owl.theme.default.min.css">
+		<link rel="stylesheet" href="./css/style.css" />
 		<script
 			src="https://code.jquery.com/jquery-3.3.1.min.js"
 			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -27,7 +29,7 @@
 		/> -->
 		<script src="./js/perfectScrollbar/perfect-scrollbar.min.js"></script>
 		<!-- <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.js"></script> -->
-		<script src="./js/siema.min.js"></script>
+		<!-- <script src="./js/siema.min.js"></script> -->
 		<script src="./js/preload.js"></script>
 		<script src="./js/pre.js"></script>
 		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
@@ -89,7 +91,7 @@
 			<div class="slides">
 				<!-- landing page -->
 				<section>
-					<section data-background-image="images/bg/home.jpg">
+					<section id="home-section" data-background-image="images/bg/home.jpg">
 						<div class="elements-culmyca">
 							<span class="elements">elements</span>
 							<span class="_19">19</span>
@@ -108,31 +110,29 @@
 					</section>
 
 					<!-- gallery section -->
-					<section>
-						<!-- siema carousel for image gallery -->
-						<div class="siema">
-							<div class="item">
-								<img
-									src="images/bg/drama.jpg"
-									alt="The Last of us"
-								/>
-								<!-- gallery -->
-							</div>
-							<div class="item">
-								<img src="images/bg/home.jpg" alt="GTA V" />
-							</div>
-							<div class="item">
-								<img
-									src="images/bg/drama.jpg"
-									alt="Mirror Edge"
-								/>
-							</div>
-							<div class="item">
-								<img
-									src="images/bg/home.jpg"
-									alt="Mirror Edge"
-								/>
-							</div>
+					<section id="gallery-section">
+						<!-- owl carousel for image gallery -->
+						<!-- <div class="customNavigation">
+							<a class="btn prev">Previous</a>
+							<a class="btn next">Next</a>
+						</div> -->
+						<div class="owl-carousel">
+							<div class="item"><img src="images/gallery/1.jpg"/></div>
+							<div class="item"><img src="images/gallery/2.jpg"/></div>
+							<div class="item"><img src="images/gallery/3.jpg"/></div>
+							<div class="item"><img src="images/gallery/4.jpg"/></div>
+							<div class="item"><img src="images/gallery/5.jpg"/></div>
+							<div class="item"><img src="images/gallery/6.jpg"/></div>
+							<div class="item"><img src="images/gallery/7.jpg"/></div>
+							<div class="item"><img src="images/gallery/8.jpg"/></div>
+							<div class="item"><img src="images/gallery/9.jpg"/></div>
+							<div class="item"><img src="images/gallery/10.jpg"/></div>
+							<div class="item"><img src="images/gallery/11.jpg"/></div>
+							<div class="item"><img src="images/gallery/12.jpg"/></div>
+							<div class="item"><img src="images/gallery/13.jpg"/></div>
+							<div class="item"><img src="images/gallery/14.jpg"/></div>
+							<div class="item"><img src="images/gallery/15.jpg"/></div>
+							<div class="item"><img src="images/gallery/16.jpg"/></div>
 						</div>
 					</section>
 
@@ -176,7 +176,7 @@
 				</section>
 
 				<!-- events slide -->
-				<section data-background-image="images/bg/drama.jpg">
+				<section id="events-section" data-background-image="images/bg/drama.jpg">
 					<section>
 						<div class="events"><span class="events">events</span></div>
 						<div class="links-to-subsections ">
@@ -527,7 +527,7 @@
 					</section>
 				</section>
 				<!-- starnight slide -->
-				<section>
+				<section id="starnight-section">
 					<section
 						class="page-3"
 						data-background-image="images/bg/ec_back.jpg"
@@ -605,9 +605,7 @@
 							by NAAC. Our University has been mandated to
 							affiliate 50+ B.Tech and B.Ed institutions.
 						</p>
-						<div class="to-right big-navigation-link">
-							Culmyca
-						</div>
+						<div class="to-right big-navigation-link">Culmyca</div>
 					</div>
 				</section>
 				
@@ -638,14 +636,12 @@
 							all roads lead to just one destination: J. C. Bose
 							University Of Science and Technology, YMCA.
 						</p>
-						<div class="to-right big-navigation-link">
-							Contact
-						</div>
+						<div class="to-right big-navigation-link">Contact</div>
 					</div>
 				</section>
 
 				<!-- contact -->
-				<section data-background-image="images/bg/contact.jpeg">
+				<section id="contact-section" data-background-image="images/bg/contact.jpeg">
 					<div class="contact-container">
 						<!-- Contact<br /><br /> -->
 						<div class="ymca">
@@ -697,7 +693,7 @@
 				</section>
 
 				<!-- sponsors -->
-				<section data-background-image="images/bg/sponsor.jpg">
+				<section id="sponsors-section" data-background-image="images/bg/sponsor.jpg">
 					Sponsors will be updated shortly.<br /><br /><br /><br /><br /><br /><br /><br />
 					<!-- <div class="container">
 						<div class="container-images">
@@ -719,6 +715,7 @@
 				<!-- team -->
 				<section
 					class="team"
+					id="team-section"
 					data-background-image="images/bg/ec_back.jpg"
 				>
 					<div id="team-container">
@@ -726,12 +723,12 @@
 						<div class="team-img-container">
 							<img class="team-img" src="./images/team/dev/mohit.jpg" alt="">
 							<span class="team-img-title">Mohit Yadav</span>
-							<span class="team-img-description">Web Developer</span>
+							<span class="team-img-description">Lead Web Developer</span>
 						</div>
 						<div class="team-img-container">
 							<img class="team-img" src="./images/team/dev/saagar.jpeg" alt="">
 							<span class="team-img-title">Saagar Verma</span>
-							<span class="team-img-description">Web Developer</span>
+							<span class="team-img-description">Frontend Developer</span>
 						</div>
 						<div class="team-img-container">
 							<img class="team-img" src="./images/team/dev/prince.jpg" alt="">
@@ -747,6 +744,11 @@
 							<img class="team-img" src="./images/team/dev/shubham.jpeg" alt="">
 							<span class="team-img-title">Shubham Sharma</span>
 							<span class="team-img-description">UI Designer</span>
+						</div>
+						<div class="team-img-container">
+							<img class="team-img" src="./images/team/dev/sahil.jpg" alt="">
+							<span class="team-img-title">Sahil Singla</span>
+							<span class="team-img-description">Chep Developer</span>
 						</div>
 						<br /> <br>
 						<!-- Oraganising Team <br> <br> -->
@@ -792,8 +794,6 @@
 						</div> -->
 						<br><br><br>
 					</div>
-					
-					<div class="big-navigation-link" onclick="gotoslide(0,0)">Home</div>
 				</section>
 			</div>
 			<!-- slides -->
@@ -809,6 +809,7 @@
 		<!-- <script src="./lib/js/head.min.js"></script> -->
 		<script src="./js/reveal.js"></script>
 		<script src="./js/revealConfig.js"></script>
+		<script src="./js/owl.carousel.min.js"></script>
 
 		<!-- custom cursor -->
 		<script src="./js/cursor.js"></script>
