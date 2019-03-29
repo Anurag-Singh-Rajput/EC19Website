@@ -1180,15 +1180,18 @@ button {
 
 	.ec-x {
 		font-size: 40px;
-		/*line-height: 0px;*/
-		
-		color: white!important;
+		line-height: 0px;
+		color: black!important;
 		/*-webkit-text-stroke: 1px black;*/
-		transform: translate(10px, -5px);
+		transform: translate(0px, 15px);
+		background: initial;
+    	-webkit-background-clip: initial;
+    	-webkit-text-fill-color: initial;
 	}
 
 	.elements-loader {
 		/*-webkit-text-stroke: 0.1px white;*/
+		color: red!important;
 	}
 
 	.line-1 {
@@ -1223,6 +1226,14 @@ button {
 		position: relative !important;
 		float: right;
 		left: 0 !important;
+	}
+}
+
+/*Media Queries 480px*/
+
+@media only screen and (max-device-width: 480px) {
+	.ec-x {
+		font-size: 35px;
 	}
 }
 
