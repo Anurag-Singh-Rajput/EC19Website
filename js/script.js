@@ -16,10 +16,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		var navbar = document.getElementById("navbar-links");
 		if (navbar.style.height == "0px") {
 			navbar.style.height = "2000px";
-			navbar.style.backgroundColor = "#222";
+			// navbar.style.backgroundColor = "#222";
+			navbar.style.background = "linear-gradient(#222, #9b9b9b)";
 		} else {
 			navbar.style.height = "0";
 			navbar.style.backgroundColor = "transparent";
+			navbar.style.backgroundImage = "none";
 		}
 	});
 
@@ -87,6 +89,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			center: true
 		});
 	});
+
+	var owl = $(".owl-carousel");
+	owl.on("mousewheel", ".owl-stage", function(e) {
+		if (e.deltaY > 0) {
+			owl.trigger("next.owl");
+		} else {
+			owl.trigger("prev.owl");
+		}
+		e.preventDefault();
+	});
 });
 
 function gotoslide(x, y) {
@@ -94,6 +106,7 @@ function gotoslide(x, y) {
 	var navbar = document.getElementById("navbar-links");
 	navbar.style.height = "0";
 	navbar.style.backgroundColor = "transparent";
+	navbar.style.backgroundImage = "none";
 }
 
 var selectEvents = [];
@@ -104,7 +117,11 @@ function EventObject(id, title) {
 
 function fetchEventNames() {
 	$.ajax({
-		url: "http://culmyca19.herokuapp.com/eventname",
+		url: "https://culmyca19.herokuapp.com/eventname",
+		crossDomain: true,
+		headers: {
+			"Access-Control-Allow-Origin": "*"
+		},
 		type: "GET"
 	})
 		.done(function(data) {
@@ -419,5 +436,14 @@ function handleTeamMembersInputFields() {
 				2})" onfocus="hideNavbar()" onfocusout="showNavbar()" required />
 			<br /><br />`
 		);
+	}
+}
+
+function back() {
+	if (
+		window.location.hash != "#/home-section" ||
+		window.location.hash != "#/0"
+	) {
+		history.back();
 	}
 }
