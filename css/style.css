@@ -176,9 +176,9 @@
 .ec-x {
 	font-size: 100px;
 	/*color: black;*/
-    background: -webkit-linear-gradient(red, #D0D0D0, green);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+	background: -webkit-linear-gradient(red, #d0d0d0, green);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 	visibility: hidden;
 	opacity: 0;
 	transition: visibility 0s, opacity 0.5s linear;
@@ -413,9 +413,6 @@
 }
 
 @media screen and (max-width: 600px) {
-	.ps__thumb-x {
-		top: -130px !important;
-	}
 	.address {
 		display: block;
 		float: none;
@@ -1215,17 +1212,17 @@ button {
 	.ec-x {
 		font-size: 40px;
 		line-height: 0px;
-		color: black!important;
+		color: black !important;
 		/*-webkit-text-stroke: 1px black;*/
 		transform: translate(0px, 15px);
 		background: initial;
-    	-webkit-background-clip: initial;
-    	-webkit-text-fill-color: initial;
+		-webkit-background-clip: initial;
+		-webkit-text-fill-color: initial;
 	}
 
 	.elements-loader {
 		/*-webkit-text-stroke: 0.1px white;*/
-		color: red!important;
+		color: red !important;
 	}
 
 	.line-1 {
@@ -1246,11 +1243,9 @@ button {
 	.loading {
 		padding-top: 280px;
 		font-size: 20px;
-
 	}
 
 	.loader {
-		
 	}
 
 	/*----------  next section  ----------*/
