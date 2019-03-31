@@ -922,7 +922,6 @@
 #event-register-button {
 	color: white;
 	font-size: 20px;
-	/* float: left; */
 	padding: 12px 60px;
 	border: none;
 	border-radius: 20px;
@@ -987,7 +986,7 @@
 #event-details-container,
 #team-container,
 #registeration-form-container {
-	height: calc(80vh) !important;
+	height: calc(200vh) !important;
 	width: 100%;
 	position: relative;
 	overflow-y: auto;
@@ -1074,7 +1073,7 @@
 	overflow-x: hidden;
 }
 
-#registeration-form input[type],
+#registeration-form input[type]:not([type="button"]),
 #registeration-form select {
 	padding: 16px 24px;
 	background-color: rgba(255, 255, 255, 0.3);
@@ -1083,17 +1082,39 @@
 	font-size: 24px;
 	border: none;
 	border-radius: 25px;
-	/* float: left; */
 	clear: both;
 	margin: 12px 0;
+	width: 500px;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+select option {
+	background: #222;
+	color: #d2d2d2;
+}
+select option[disabled] {
+	color: #bbbbbb;
+}
+#registeration-form option {
+	font-size: 16px !important;
 }
 #registeration-form input[type]::placeholder {
 	color: #bbbbbb;
 }
 #registeration-form select {
-	color: #bbbbbb;
+	color: #d2d2d2;
+}
+#events-list,
+#teamsize-select {
+	display: block;
+	left: 50%;
+	position: relative;
+	margin: 12px 0 24px 0 !important;
+	transform: translateX(-50%);
 }
 #registeration-register-button {
+	width: auto;
 	color: white;
 	font-size: 24px;
 	padding: 14px 120px !important;
@@ -1109,19 +1130,6 @@
 	border: 2px solid var(--orange) !important;
 	background-color: rgba(255, 255, 255, 0.1) !important;
 }
-#registeration-form option {
-	font-size: 16px !important;
-}
-#events-list,
-#teamsize-select {
-	min-width: 505px;
-	max-width: 505px;
-	display: block;
-	left: 50%;
-	position: relative;
-	margin: 12px 0 24px 0 !important;
-	transform: translateX(-50%);
-}
 textarea,
 select,
 input,
@@ -1131,15 +1139,16 @@ button {
 
 @media screen and (max-width: 600px) {
 	#registeration-form-container {
-		margin-top: -120px !important;
+		margin-top: -250px !important;
 	}
-	#registeration-form input[type],
+	#registeration-form input[type]:not([type="button"]),
 	#registeration-form select {
 		padding: 32px 24px;
 		font-size: 42px !important;
 		border-radius: 32px;
 		float: left;
 		margin: 24px 0;
+		width: 800px;
 	}
 	#registeration-form option {
 		font-size: 14px !important;
@@ -1151,14 +1160,14 @@ button {
 		border-radius: 32px;
 		border: 2px solid transparent !important;
 		float: left;
+		margin-top: 24px;
 	}
 	#events-list,
 	#teamsize-select {
-		min-width: 300px;
-		max-width: 500px;
 		left: 0;
 		position: relative;
 		transform: translateX(0);
+		margin: 24px 0 24px 0 !important;
 	}
 }
 
