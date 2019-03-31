@@ -118,10 +118,6 @@ function EventObject(id, title) {
 function fetchEventNames() {
 	$.ajax({
 		url: "https://culmyca19.herokuapp.com/events",
-		crossDomain: true,
-		headers: {
-			"Access-Control-Allow-Origin": "*"
-		},
 		type: "GET"
 	})
 		.done(function(data) {
