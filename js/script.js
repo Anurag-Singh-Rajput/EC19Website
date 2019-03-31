@@ -117,7 +117,7 @@ function EventObject(id, title) {
 
 function fetchEventNames() {
 	$.ajax({
-		url: "https://culmyca19.herokuapp.com/eventname",
+		url: "https://culmyca19.herokuapp.com/events",
 		crossDomain: true,
 		headers: {
 			"Access-Control-Allow-Origin": "*"
@@ -163,8 +163,9 @@ function fetchEventNames() {
 				);
 			});
 		})
-		.fail(function() {
+		.fail(function(err) {
 			console.log("error");
+			console.log(err);
 		})
 		.always(function() {
 			console.log("finished adding event titles");
@@ -440,8 +441,9 @@ function handleTeamMembersInputFields() {
 }
 
 function back() {
+	console.log(window.location.hash);
 	if (
-		window.location.hash != "#/home-section" ||
+		window.location.hash != "#/home-section" &&
 		window.location.hash != "#/0"
 	) {
 		history.back();
