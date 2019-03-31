@@ -1022,13 +1022,13 @@
 		margin-top: -20% !important;
 	}
 	#registeration-form-container {
-		height: calc(200vh) !important;
+		height: calc(175vh) !important;
 	}
 	#event-details-container {
-		height: 200vh !important;
+		height: 175vh !important;
 	}
 	#team-container {
-		height: 200vh !important;
+		height: 175vh !important;
 	}
 	.event-description-heading,
 	.event-rules-heading {

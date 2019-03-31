@@ -139,9 +139,12 @@ function fetchEventNames() {
 						new EventObject(eventData._id, eventData.title)
 					);
 				}
-				var eventsNameContainer = $(
-					"#" + eventData.clubname.toLowerCase() + "-events"
-				);
+				var eventContainerId =
+					"#" +
+					eventData.clubname.toLowerCase().replace(/ /g, "-") +
+					"-events";
+				console.log(eventContainerId);
+				var eventsNameContainer = $(eventContainerId);
 				console.log(
 					"appending " +
 						eventData.title +
