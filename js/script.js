@@ -389,6 +389,7 @@ function registerForEvent() {
 			console.log(response);
 		})
 		.fail(function(response) {
+			console.log("failed to register!");
 			console.log(response);
 		})
 		.always(function(response) {
