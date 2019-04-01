@@ -25,13 +25,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		}
 	});
 
-	// try {
-	// 	new Siema();
-	// 	mySiema.resizeHandler();
-	// } catch (err) {
-	// 	console.log(err.message);
-	// }
-
 	Array.from(document.querySelectorAll(".links-to-subsections")).forEach(
 		function(container) {
 			new PerfectScrollbar(container);
@@ -99,6 +92,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		}
 		e.preventDefault();
 	});
+
+	registerForEventEventListener();
 });
 
 function gotoslide(x, y) {
@@ -121,7 +116,6 @@ function fetchEventNames() {
 		type: "GET"
 	})
 		.done(function(data) {
-			console.log(data);
 			console.log("fetched events title data");
 			data.forEach(function(eventData) {
 				if (
@@ -143,16 +137,7 @@ function fetchEventNames() {
 					"#" +
 					eventData.clubname.toLowerCase().replace(/ /g, "-") +
 					"-events";
-				console.log(eventContainerId);
 				var eventsNameContainer = $(eventContainerId);
-				console.log(
-					"appending " +
-						eventData.title +
-						" " +
-						eventData._id +
-						" to " +
-						eventData.clubname
-				);
 				eventsNameContainer.append(
 					"<span class='nav-link event-link' data-id=" +
 						eventData._id +
@@ -287,12 +272,10 @@ function addOnClickListenerToEventLinks() {
 						coord2Phone.textContent = "";
 					}
 					if (eventData.eventtype === "NA" || eventType === "") {
-						console.log("hiding register button");
 						document.getElementById(
 							"event-register-button"
 						).style.display = "none";
 					} else {
-						console.log("showing registeration button");
 						document.getElementById(
 							"event-register-button"
 						).style.display = "block";
@@ -345,79 +328,104 @@ function showNavbar() {
 	document.getElementById("navbar").style.display = "block";
 }
 
-function registerForEvent() {
-	var regForm = document.getElementById("registeration-form");
-	var name = regForm["name"].value;
-	var phone = Number(regForm["phone"].value);
-	var email = regForm["email"].value;
-	var college = regForm["college"].value;
-	var eventid = regForm["event"].value;
-	var eventname =
-		regForm["event"].options[regForm["event"].selectedIndex].textContent;
-	var timestamp = Date.now();
-	var team = [];
+function registerForEventEventListener() {
+	registerForm = document.querySelector("#registeration-form");
+	registerForm.addEventListener("submit", function(e) {
+		e.preventDefault();
+		var regForm = document.getElementById("registeration-form");
+		var name = regForm["name"].value;
+		var phone = Number(regForm["phone"].value);
+		var email = regForm["email"].value;
+		var college = regForm["college"].value;
+		var eventid = regForm["event"].value;
+		var eventname =
+			regForm["event"].options[regForm["event"].selectedIndex]
+				.textContent;
+		var timestamp = Date.now();
+		var team = [];
 
-	if (document.getElementById("teamsize-select").style.display !== "none") {
-		var teamSize = Number(document.getElementById("teamsize-select").value);
-		for (var i = 0; i < teamSize - 1; i++) {
-			var teammateName = regForm["name" + (i + 2)].value;
-			var teammateEmail = regForm["email" + (i + 2)].value;
-			team.push({
-				name: teammateName,
-				email: teammateEmail
-			});
-		}
-	}
-
-	data = {
-		name: name,
-		phone: phone,
-		email: email,
-		college: college,
-		eventid: eventid,
-		eventname: eventname,
-		timestamp: timestamp,
-		team: team
-	};
-
-	$.ajax({
-		url: "https://cylmyca19.herokuapp.com/register",
-		type: "POST",
-		data: data
-	})
-		.done(function(response) {
-			console.log(response);
-		})
-		.fail(function(response) {
-			console.log("failed to register!");
-			console.log(response);
-		})
-		.always(function(response) {
-			if (
-				response.status === "success" ||
-				response.status === "Success" ||
-				response.Status === "success" ||
-				response.Status === "Success"
-			) {
-				document.getElementById("registeration-msg").textContent =
-					"You have been registered";
-			} else if (response.status === "Already Registered") {
-				document.getElementById("registeration-msg").textContent =
-					"You are already registered.";
-			} else {
-				document.getElementById("registeration-msg").textContent =
-					"Failed to register.";
+		if (
+			document.getElementById("teamsize-select").style.display !== "none"
+		) {
+			var teamSize = Number(
+				document.getElementById("teamsize-select").value
+			);
+			for (var i = 0; i < teamSize - 1; i++) {
+				var teammateName = regForm["name" + (i + 2)].value;
+				var teammateEmail = regForm["email" + (i + 2)].value;
+				team.push({
+					name: teammateName,
+					email: teammateEmail
+				});
 			}
-		});
+		}
 
-	console.log(name);
-	console.log(phone);
-	console.log(email);
-	console.log(college);
-	console.log(timestamp);
-	console.log(eventname);
-	console.log(eventid);
-	console.log(team);
+		data = {
+			name: name,
+			phone: phone,
+			email: email,
+			college: college,
+			eventid: eventid,
+			eventname: eventname,
+			timestamp: timestamp,
+			team: team
+		};
+		console.log("data: ", JSON.stringify(data));
+		// console.log("param data: ", $.param(data));
+
+		var jsonToURLEncoded = function JSON_to_URLEncoded(element, key, list) {
+			var list = list || [];
+			if (typeof element == "object") {
+				for (var idx in element)
+					JSON_to_URLEncoded(
+						element[idx],
+						key ? key + "[" + idx + "]" : idx,
+						list
+					);
+			} else {
+				list.push(key + "=" + encodeURIComponent(element));
+			}
+			return list.join("&");
+		};
+
+		var data = jsonToURLEncoded(data);
+		// data = $.param(data);
+		// console.log("data: ", data);
+
+		$.ajax({
+			async: true,
+			url: "https://culmyca19.herokuapp.com/register",
+			method: "POST",
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded"
+			},
+			data: data
+			/**
+			 * the below data works
+			 * */
+			// data: {
+			// 	name: "mohit",
+			// 	phone: "9953884416",
+			// 	email: "mohit@mohit.com",
+			// 	college: "ymca",
+			// 	eventid: "5c98f9e7d848980004aa92be",
+			// 	eventname: "Android Development",
+			// 	timestamp: "1554028305974",
+			// 	team: '[{"name": "mohit"}]'
+			// }
+		})
+			.done(function(response) {
+				console.log("successfully registered!");
+				console.log(response);
+			})
+			.fail(function(response) {
+				console.log("failed to register!");
+				console.log(response);
+			})
+			.always(function(response) {
+				console.log(response.message);
+			});
+	});
 }
 
 function handleTeamMembersInputFields() {
