@@ -344,6 +344,8 @@ function registerForEventEventListener() {
 		var timestamp = Date.now();
 		var team = [];
 
+		console.log('phone : ' + phone + " name : " + name + " email : " + email + " college : " + college + " eventid : " + eventid + " eventName : " + eventname)
+
 		if (
 			document.getElementById("teamsize-select").style.display !== "none"
 		) {
@@ -360,71 +362,88 @@ function registerForEventEventListener() {
 			}
 		}
 
-		data = {
-			name: name,
-			phone: phone,
-			email: email,
-			college: college,
-			eventid: eventid,
-			eventname: eventname,
-			timestamp: timestamp,
-			team: team
-		};
-		console.log("data: ", JSON.stringify(data));
+		// data = {
+		// 	name: name,
+		// 	phone: phone,
+		// 	email: email,
+		// 	college: college,
+		// 	eventid: eventid,
+		// 	eventname: eventname,
+		// 	timestamp: timestamp,
+		// 	team: team
+		// };
+		//console.log("data: ", JSON.stringify(data));
 		// console.log("param data: ", $.param(data));
 
-		var jsonToURLEncoded = function JSON_to_URLEncoded(element, key, list) {
-			var list = list || [];
-			if (typeof element == "object") {
-				for (var idx in element)
-					JSON_to_URLEncoded(
-						element[idx],
-						key ? key + "[" + idx + "]" : idx,
-						list
-					);
-			} else {
-				list.push(key + "=" + encodeURIComponent(element));
-			}
-			return list.join("&");
-		};
+		// var jsonToURLEncoded = function JSON_to_URLEncoded(element, key, list) {
+		// 	var list = list || [];
+		// 	if (typeof element == "object") {
+		// 		for (var idx in element)
+		// 			JSON_to_URLEncoded(
+		// 				element[idx],
+		// 				key ? key + "[" + idx + "]" : idx,
+		// 				list
+		// 			);
+		// 	} else {
+		// 		list.push(key + "=" + encodeURIComponent(element));
+		// 	}
+		// 	return list.join("&");
+		// };
 
-		var data = jsonToURLEncoded(data);
-		// data = $.param(data);
+		// var data = jsonToURLEncoded(data);
+		// // data = $.param(data);
 		// console.log("data: ", data);
 
+		// console.log(data);
+
 		$.ajax({
-			async: true,
-			url: "https://culmyca19.herokuapp.com/register",
-			method: "POST",
-			headers: {
-				"Content-Type": "application/x-www-form-urlencoded"
-			},
-			data: data
-			/**
-			 * the below data works
-			 * */
-			// data: {
-			// 	name: "mohit",
-			// 	phone: "9953884416",
-			// 	email: "mohit@mohit.com",
-			// 	college: "ymca",
-			// 	eventid: "5c98f9e7d848980004aa92be",
-			// 	eventname: "Android Development",
-			// 	timestamp: "1554028305974",
-			// 	team: '[{"name": "mohit"}]'
-			// }
+			url: 'https://culmyca19.herokuapp.com/register',
+			type: 'POST',
+			data: {phone: phone, email: email, college: college,
+			 eventid: eventid, eventname: eventname,
+			 timestamp: timestamp, team: '[{"name": "'+name+'"},{"email": "'+email+'"}]'},
 		})
-			.done(function(response) {
-				console.log("successfully registered!");
-				console.log(response);
-			})
-			.fail(function(response) {
-				console.log("failed to register!");
-				console.log(response);
-			})
-			.always(function(response) {
-				console.log(response.message);
-			});
+		.done(function(data) {
+			console.log("success" + data);
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+		
+
+		// $.ajax({
+		// 	async: true,
+		// 	url: "https://culmyca19.herokuapp.com/register",
+		// 	method: "POST",
+		// 	data: data
+		// 	/**
+		// 	 * the below data works
+		// 	 * */
+		// 	// data: {
+		// 	// 	name: "mohit",
+		// 	// 	phone: "9953884416",
+		// 	// 	email: "mohit@mohit.com",
+		// 	// 	college: "ymca",
+		// 	// 	eventid: "5c98f9e7d848980004aa92be",
+		// 	// 	eventname: "Android Development",
+		// 	// 	timestamp: "1554028305974",
+		// 	// 	team: '[{"name": "mohit"}]'
+		// 	// }
+		// })
+		// .done(function(response) {
+		// 	console.log("successfully registered!");
+		// 	console.log(response);
+		// })
+		// .fail(function(response) {
+		// 	console.log("failed to register!");
+		// 	console.log(response);
+		// })
+		// .always(function(response) {
+		// 	console.log(response.message);
+		// });
 	});
 }
 

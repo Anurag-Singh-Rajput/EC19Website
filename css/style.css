@@ -986,7 +986,7 @@
 #event-details-container,
 #team-container,
 #registeration-form-container {
-	height: calc(80vh) !important;
+	height: calc(60vh) !important;
 	width: 100%;
 	position: relative;
 	overflow-y: auto;
