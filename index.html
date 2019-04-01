@@ -51,6 +51,12 @@
 	</div>
 	<div class="preloader-bottom"></div>
 
+
+		<!-- loading gif -->
+		<div id="loading-gif-container-global">
+			<img id="loading-gif-image-global" style="display: none;" src="./images/loading.gif" alt="loading...">
+		</div>
+
 		<!-- The nav bar -->
 		<div class="nav" id="navbar">
 			<span class="navbar-left" id="jcboselogo">
@@ -100,7 +106,7 @@
 						</div>
 						<div class="links-to-subsections" >
 							<span class="gallery nav-link" onclick="Reveal.slide(0,1);">gallery</span>
-							<span class="register nav-link" onclick="Reveal.slide(0,2);">register</span>
+							<span class="register nav-link" onclick="Reveal.slide(0,2); resetRegisterationSlide();">register</span>
 							<span class="nav-link" onclick="Reveal.slide(1,0);">events</span>
 							<span class="nav-link" onclick="Reveal.slide(2,0);">starnight</span>
 						</div>
@@ -151,20 +157,21 @@
 								<select name="event" id="events-list">
 									<option disabled>Select Event</option>
 								</select>
-								<!-- <br>
-								<input type="number" name="teamsize" min="1" max="10" id="teamsize-input" placeholder="4" onchange="handleTeamMembersInputFields()"> -->
-								<select name="teamsize" id="teamsize-select" oninput="handleTeamMembersInputFields();">
+								<!-- <select name="teamsize" id="teamsize-select" oninput="handleTeamMembersInputFields();">
 									<option value="0">Select Team Size</option>
 									<option value="1">1</option>
 									<option value="2">2</option>
 									<option value="3">3</option>
 									<option value="4">4</option>
-								</select>
+								</select> -->
 								<div id="teamMembersInputFormContainer">
 								</div>
 								<input type="submit" value="Register" id="registeration-register-button">
-								<p id="registeration-msg" style="display: none;"></p>
 							</form>
+							<div id="loading-gif-container" style="display: none;">
+								<img src="./images/loading.gif" alt="loading...">
+							</div>
+							<p id="registeration-msg" style="display: none;"></p></p>
 						</div>
 						<!-- navigate to events -->
 						<div class="to-right big-navigation-link">events</div>
@@ -470,7 +477,7 @@
 							</p>
 
 							<input type="button" value="Register" onclick="goToRegister()" id="event-register-button">
-							<br><br><br>
+							<br>
 						</div>
 					</section>
 				</section>

@@ -31,15 +31,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		}
 	);
 
-	const container = document.querySelector("#event-details-container");
-	new PerfectScrollbar(container);
+	new PerfectScrollbar(document.querySelector("#event-details-container"));
 	new PerfectScrollbar(
 		document.getElementById("registeration-form-container")
 	);
 	new PerfectScrollbar(document.querySelector("#team-container"));
 
 	fetchEventNames();
-	// ps.update();
 
 	clipBigNavLink();
 
@@ -165,18 +163,19 @@ function clipBigNavLink() {
 	});
 }
 
-function clipBigNavLink() {
-	var links = $(".big-navigation-link");
-	links.each(function() {
-		var innerText = $(this).text();
-		$(this).text(innerText.substring(0, 7));
-	});
-}
-
 function addOnClickListenerToEventLinks() {
 	document.querySelectorAll(".event-link").forEach(function(eventLink) {
 		eventLink.addEventListener("click", function(e) {
 			console.log("opening event...");
+
+			// show loading gif
+			var loadingGifImageGlobal = document.querySelector(
+				"#loading-gif-image-global"
+			);
+			loadingGifImageGlobal.style.display = "block";
+			loadingGifImageGlobal.style.zIndex = "999";
+
+			// continue
 			var eventId = e.target.getAttribute("data-id");
 			console.log(eventId);
 			$.ajax({
@@ -282,12 +281,23 @@ function addOnClickListenerToEventLinks() {
 					}
 				})
 				.fail(function() {})
-				.always(function() {});
+				.always(function() {
+					document
+						.querySelector("#event-details-container")
+						.scrollTo({
+							left: 0,
+							top: 0
+						});
+					// hide loading gif
+					loadingGifImageGlobal.style.display = "none";
+					loadingGifImageGlobal.style.zIndex = "0";
+				});
 		});
 	});
 }
 
 function goToRegister() {
+	resetRegisterationSlide();
 	Reveal.slide(0, 2);
 
 	// get id of current event
@@ -298,11 +308,11 @@ function goToRegister() {
 	if (eventType.toLowerCase() === "solo") {
 		console.log(eventType + "event");
 		$("#teamMembersInputFormContainer").html("");
-		document.getElementById("teamsize-select").style.display = "none";
 	} else {
 		console.log(eventType + "event");
-		$("#teamMembersInputFormContainer").html("");
-		document.getElementById("teamsize-select").style.display = "block";
+		$("#teamMembersInputFormContainer").html(
+			"<div>*Other team members are not required to register. Team leader has to register on behalf of the whole team.</div>"
+		);
 	}
 	// search id of current event in selectEvents
 	var eventIndex = -1;
@@ -342,130 +352,107 @@ function registerForEventEventListener() {
 			regForm["event"].options[regForm["event"].selectedIndex]
 				.textContent;
 		var timestamp = Date.now();
-		var team = [];
+		// var team = [];
 
-		console.log('phone : ' + phone + " name : " + name + " email : " + email + " college : " + college + " eventid : " + eventid + " eventName : " + eventname)
+		console.log(
+			"phone : " + phone,
+			" name : " + name,
+			" email : " + email,
+			" college : " + college,
+			" eventid : " + eventid,
+			" eventName : " + eventname
+		);
 
-		if (
-			document.getElementById("teamsize-select").style.display !== "none"
-		) {
-			var teamSize = Number(
-				document.getElementById("teamsize-select").value
-			);
-			for (var i = 0; i < teamSize - 1; i++) {
-				var teammateName = regForm["name" + (i + 2)].value;
-				var teammateEmail = regForm["email" + (i + 2)].value;
-				team.push({
-					name: teammateName,
-					email: teammateEmail
-				});
-			}
-		}
-
-		// data = {
-		// 	name: name,
-		// 	phone: phone,
-		// 	email: email,
-		// 	college: college,
-		// 	eventid: eventid,
-		// 	eventname: eventname,
-		// 	timestamp: timestamp,
-		// 	team: team
-		// };
-		//console.log("data: ", JSON.stringify(data));
-		// console.log("param data: ", $.param(data));
-
-		// var jsonToURLEncoded = function JSON_to_URLEncoded(element, key, list) {
-		// 	var list = list || [];
-		// 	if (typeof element == "object") {
-		// 		for (var idx in element)
-		// 			JSON_to_URLEncoded(
-		// 				element[idx],
-		// 				key ? key + "[" + idx + "]" : idx,
-		// 				list
-		// 			);
-		// 	} else {
-		// 		list.push(key + "=" + encodeURIComponent(element));
+		// get team member details
+		// if (
+		// 	document.getElementById("teamsize-select").style.display !== "none"
+		// ) {
+		// 	var teamSize = Number(
+		// 		document.getElementById("teamsize-select").value
+		// 	);
+		// 	for (var i = 0; i < teamSize - 1; i++) {
+		// 		var teammateName = regForm["name" + (i + 2)].value;
+		// 		var teammateEmail = regForm["email" + (i + 2)].value;
+		// 		team.push({
+		// 			name: teammateName,
+		// 			email: teammateEmail
+		// 		});
 		// 	}
-		// 	return list.join("&");
-		// };
+		// }
 
-		// var data = jsonToURLEncoded(data);
-		// // data = $.param(data);
-		// console.log("data: ", data);
+		// store references
+		var regMsg = document.querySelector("#registeration-msg");
+		var loadinGifContainer = document.querySelector(
+			"#loading-gif-container"
+		);
 
-		// console.log(data);
+		// hide registeration form, scroll to top and show loading gif
+		registerForm.style.display = "none";
+		document.querySelector("#registeration-form-container").scrollTo({
+			left: 0,
+			top: 0
+		});
+		loadinGifContainer.style.display = "block";
 
 		$.ajax({
-			url: 'https://culmyca19.herokuapp.com/register',
-			type: 'POST',
-			data: {phone: phone, email: email, college: college,
-			 eventid: eventid, eventname: eventname,
-			 timestamp: timestamp, team: '[{"name": "'+name+'"},{"email": "'+email+'"}]'},
+			url: "https://culmyca19.herokuapp.com/register",
+			type: "POST",
+			data: {
+				phone: phone,
+				email: email,
+				college: college,
+				eventid: eventid,
+				eventname: eventname,
+				timestamp: timestamp,
+				team: '[{"name": "' + name + '"},{"email": "' + email + '"}]'
+			}
 		})
-		.done(function(data) {
-			console.log("success" + data);
-		})
-		.fail(function() {
-			console.log("error");
-		})
-		.always(function() {
-			console.log("complete");
-		});
-		
-
-		// $.ajax({
-		// 	async: true,
-		// 	url: "https://culmyca19.herokuapp.com/register",
-		// 	method: "POST",
-		// 	data: data
-		// 	/**
-		// 	 * the below data works
-		// 	 * */
-		// 	// data: {
-		// 	// 	name: "mohit",
-		// 	// 	phone: "9953884416",
-		// 	// 	email: "mohit@mohit.com",
-		// 	// 	college: "ymca",
-		// 	// 	eventid: "5c98f9e7d848980004aa92be",
-		// 	// 	eventname: "Android Development",
-		// 	// 	timestamp: "1554028305974",
-		// 	// 	team: '[{"name": "mohit"}]'
-		// 	// }
-		// })
-		// .done(function(response) {
-		// 	console.log("successfully registered!");
-		// 	console.log(response);
-		// })
-		// .fail(function(response) {
-		// 	console.log("failed to register!");
-		// 	console.log(response);
-		// })
-		// .always(function(response) {
-		// 	console.log(response.message);
-		// });
+			.done(function(data) {
+				console.log("success: " + JSON.stringify(data));
+				if (data.status == "Success") {
+					regMsg.textContent =
+						"Congratulations, you have been registered successfully!";
+					regMsg.style.color = "lightgreen";
+				} else {
+					regMsg.textContent = "Error: " + data.status;
+					regMsg.style.color = "lightcoral";
+				}
+			})
+			.fail(function() {
+				console.log("error: " + JSON.stringify(data));
+				regMsg.textContent = "Error: " + data.status;
+			})
+			.always(function() {
+				console.log("complete");
+				// hide loading gif and show result
+				loadinGifContainer.style.display = "none";
+				regMsg.style.display = "block";
+				document.querySelector(
+					"#registeration-form-container"
+				).scrollTop = 0;
+			});
 	});
 }
 
-function handleTeamMembersInputFields() {
-	document.getElementById("teamsize-select").style.display = "block";
-	var size = Number(document.getElementById("teamsize-select").value);
-	var teamMembersInputFormContainer = $("#teamMembersInputFormContainer");
-	teamMembersInputFormContainer.html("");
+// function handleTeamMembersInputFields() {
+// 	document.getElementById("teamsize-select").style.display = "block";
+// 	var size = Number(document.getElementById("teamsize-select").value);
+// 	var teamMembersInputFormContainer = $("#teamMembersInputFormContainer");
+// 	teamMembersInputFormContainer.html("");
 
-	for (var i = 0; i < size - 1; ++i) {
-		teamMembersInputFormContainer.append(
-			`<input type="text" name="name${i +
-				2}" size="35" placeholder="Name (Member ${i +
-				2})" onfocus="hideNavbar()" onfocusout="showNavbar()" required />
-			<br />
-			<input type="email" name="email${i +
-				2}" size="35" placeholder="Email (Member ${i +
-				2})" onfocus="hideNavbar()" onfocusout="showNavbar()" required />
-			<br /><br />`
-		);
-	}
-}
+// 	for (var i = 0; i < size - 1; ++i) {
+// 		teamMembersInputFormContainer.append(
+// 			`<input type="text" name="name${i +
+// 				2}" size="35" placeholder="Name (Member ${i +
+// 				2})" onfocus="hideNavbar()" onfocusout="showNavbar()" required />
+// 			<br />
+// 			<input type="email" name="email${i +
+// 				2}" size="35" placeholder="Email (Member ${i +
+// 				2})" onfocus="hideNavbar()" onfocusout="showNavbar()" required />
+// 			<br /><br />`
+// 		);
+// 	}
+// }
 
 function back() {
 	console.log(window.location.hash);
@@ -475,4 +462,20 @@ function back() {
 	) {
 		history.back();
 	}
+}
+
+function resetRegisterationSlide() {
+	// store references
+	var registerForm = document.querySelector("#registeration-form");
+	var regMsg = document.querySelector("#registeration-msg");
+	var loadinGifContainer = document.querySelector("#loading-gif-container");
+	// hide loading gif & registeration msg, and show registeration form
+	loadinGifContainer.style.display = "none";
+	regMsg.style.display = "none";
+	registerForm.style.display = "block";
+	// scroll to top
+	document.querySelector("#registeration-form-container").scrollTo({
+		left: 0,
+		top: 0
+	});
 }

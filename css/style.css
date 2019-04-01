@@ -986,7 +986,7 @@
 #event-details-container,
 #team-container,
 #registeration-form-container {
-	height: calc(60vh) !important;
+	height: calc(65vh) !important;
 	width: 100%;
 	position: relative;
 	overflow-y: auto;
@@ -1077,7 +1077,23 @@
 #registeration-form-container {
 	overflow-x: hidden;
 }
-
+#loading-gif-container img {
+	border: none !important;
+	background: none !important;
+	height: 200px !important;
+}
+#loading-gif-container-global img {
+	border: none !important;
+	height: 100px !important;
+	z-index: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+#registeration-msg {
+	font-size: 22px !important;
+}
 #registeration-form input[type]:not([type="submit"]),
 #registeration-form select {
 	padding: 16px 24px;
@@ -1142,6 +1158,14 @@ button {
 	outline: none;
 }
 
+#teamMembersInputFormContainer {
+	clear: both !important;
+	font-size: 16px !important;
+	text-align: center;
+	margin: 12px 0 24px 0;
+	color: #d3d3d3;
+}
+
 @media screen and (max-width: 600px) {
 	#registeration-form-container {
 		margin-top: -250px !important;
@@ -1173,6 +1197,13 @@ button {
 		position: relative;
 		transform: translateX(0);
 		margin: 24px 0 24px 0 !important;
+	}
+	#teamMembersInputFormContainer {
+		font-size: 32px !important;
+		text-align: left;
+	}
+	#registeration-msg {
+		font-size: 42px !important;
 	}
 }
 
