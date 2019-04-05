@@ -140,7 +140,7 @@ function fetchEventNames() {
 					"<span class='nav-link event-link' data-id=" +
 						eventData._id +
 						">" +
-						eventData.title.toLowerCase() +
+						eventData.title +
 						"</span>"
 				);
 			});
@@ -215,15 +215,15 @@ function addOnClickListenerToEventLinks() {
 
 					// set values
 					id.textContent = eventData._id;
-					title.textContent = eventData.title.toLowerCase();
-					desc.innerHTML = eventData.desc.toLowerCase().replace(/\n/g,"<br>");
-					eventType.textContent = eventData.eventtype.toLowerCase();
-					rules.innerHTML = eventData.rules.toLowerCase().replace(/\n/g,"<br>");
+					title.textContent = eventData.title;
+					desc.innerHTML = eventData.desc.replace(/\n/g,"<br>");
+					eventType.textContent = eventData.eventtype;
+					rules.innerHTML = eventData.rules.replace(/\n/g,"<br>");
 					if (eventData.rules == "") {
 						rules.textContent = "NA";
 					}
 					timing.textContent = timeFrom + " to " + timeTo;
-					venue.textContent = eventData.venue.toLowerCase();
+					venue.textContent = eventData.venue;
 
 					var prizesInnerHTML = "";
 					if (
