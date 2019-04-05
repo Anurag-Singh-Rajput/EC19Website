@@ -216,9 +216,9 @@ function addOnClickListenerToEventLinks() {
 					// set values
 					id.textContent = eventData._id;
 					title.textContent = eventData.title.toLowerCase();
-					desc.textContent = eventData.desc.toLowerCase();
+					desc.innerHTML = eventData.desc.toLowerCase().replace(/\n/g,"<br>");
 					eventType.textContent = eventData.eventtype.toLowerCase();
-					rules.textContent = eventData.rules.toLowerCase();
+					rules.innerHTML = eventData.rules.toLowerCase().replace(/\n/g,"<br>");
 					if (eventData.rules == "") {
 						rules.textContent = "NA";
 					}
